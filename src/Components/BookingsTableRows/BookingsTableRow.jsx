@@ -5,7 +5,7 @@ import { AuthContext } from '../../AuthContext';
 import { Rating } from 'react-simple-star-rating';
 import StarRatings from 'react-star-ratings';
 
-const BookingsTableRow = ({ index, Booking }) => {
+const BookingsTableRow = ({ index, Booking,myBooking,setMyBookings }) => {
   const { user } = useContext(AuthContext)
   const { roomId, name, price, bedType, location, date } = Booking;
   const [newDate, setNewDate] = useState(date);
@@ -59,7 +59,7 @@ const BookingsTableRow = ({ index, Booking }) => {
 
     const comment = e.target.comment.value
     console.log(comment)
-    const time = Date.now(); // This would be the timestamp you want to format
+    const time = Date.now(); 
 
     const timestamp = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(time);
     console.log('time', timestamp, time)
@@ -127,19 +127,10 @@ console.log(date,cancelDate)
             text: "Your booking has been cancelled.",
             icon: "success"
           });
-        })
-        .catch(error => {
-          if (error.response && error.response.status === 400) {
-            Swal.fire({
-              position: 'center',
-              title: error.response.data,
-              icon: 'error',
-              showConfirmButton: false,
-              timer: 1500,
-            });
-
-            
-            axios.put(`http://localhost:5000/hotels/${roomId}`, {
+           const remainingBooking=myBooking.filter(book=>book.roomId !==roomId);
+          setMyBookings(remainingBooking)
+          
+                      axios.put(`http://localhost:5000/hotels/${roomId}`, {
               availability: true
             })
               .then(res => {
@@ -148,6 +139,21 @@ console.log(date,cancelDate)
               .catch(err => {
                 console.log("Error updating availability:", err);
               });
+       
+        
+            })
+        .catch(error => {
+          if (error.response && error.response.status === 400) {
+            Swal.fire({
+              position: 'center',
+              title: error.response.data,
+              icon: 'error',
+              showConfirmButton: false,
+              timer: 3000,
+            });
+
+            
+
           } else {
             console.log("Unexpected error:", error);
           }

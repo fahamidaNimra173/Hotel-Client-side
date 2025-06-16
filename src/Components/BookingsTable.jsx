@@ -1,8 +1,9 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import BookingsTableRow from './BookingsTableRows/BookingsTableRow';
 
 const BookingsTable = ({myBookingsPromise}) => {
     const myBookings=use(myBookingsPromise)
+    const [myBooking,setMyBookings]=useState(myBookings)
     return (
        <div className="overflow-x-auto">
   <table className="table table-xs ">
@@ -19,7 +20,8 @@ const BookingsTable = ({myBookingsPromise}) => {
     <tbody >
       
        {
-        myBookings.map((Booking,index)=><BookingsTableRow index={index} Booking={Booking} ></BookingsTableRow>)
+        myBooking.map((Booking,index)=><BookingsTableRow index={index}
+        myBooking={myBooking} setMyBookings={setMyBookings} Booking={Booking} ></BookingsTableRow>)
       }
   
  

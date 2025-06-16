@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const HotelCard = ({hotel}) => {
-    const {roomId,name,description,availability,image,rating}=hotel
+    const {roomId,name,description,availability,image,rating,price}=hotel
   
     return (
         <div className="card bg-base-100 border-2 w-96 shadow-sm">
@@ -19,6 +19,7 @@ const HotelCard = ({hotel}) => {
                 <p>{description}</p>
                 <div className="card-actions justify-end">
                     <div className="badge badge-outline">Ratings:{rating}</div>
+                     <div className="badge badge-outline">Price:{price}</div>
                  
                 </div>
             </div>

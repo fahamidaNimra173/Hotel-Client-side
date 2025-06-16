@@ -5,6 +5,7 @@ import { AuthContext } from '../AuthContext';
 
 const MyBookings = () => {
     const {user}=useContext(AuthContext)
+    
     return (
         <div>
             <h1 className='text-3xl font-bold text-purple-800 text-center bg-purple-50  py-22'>Hi {user.displayName} , here are your all Booked rooms</h1>
