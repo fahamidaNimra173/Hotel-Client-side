@@ -12,6 +12,7 @@ const BookingsTableRow = ({ index, Booking }) => {
   const [ratings, setRatings] = useState(0)
 
 
+
   const modalId = `modal_${roomId}`;
   const reviewModalId = `review_modal_${roomId}`
 
@@ -31,7 +32,7 @@ const BookingsTableRow = ({ index, Booking }) => {
         if (res.data.matchedCount) {
           setNewDate(updatedDate);
           Swal.fire({
-            position: 'top-end',
+            position: 'center',
             icon: 'success',
             title: 'New date has been updated',
             showConfirmButton: false,
@@ -64,7 +65,7 @@ const BookingsTableRow = ({ index, Booking }) => {
     console.log('time', timestamp, time)
     console.log('this is me', ratings)
     const review = {
-      userImage:user.photoURL,
+      userImage: user.photoURL,
       username: user.displayName,
       ratings,
       comment,
@@ -74,29 +75,88 @@ const BookingsTableRow = ({ index, Booking }) => {
     }
     axios.post(`http://localhost:5000/reviews`, review).then(res => {
       console.log(res.data)
-      if(res.data.insertedId){
-      Swal.fire({
-        title: "Thanks for Sharing Your Thoughts – Your Review is Now Live!",
+      if (res.data.insertedId) {
+        Swal.fire({
+          title: "Thanks for Sharing Your Thoughts – Your Review is Now Live!",
           timer: 3000,
-        showClass: {
-          popup: `
+          showClass: {
+            popup: `
       animate__animated
       animate__fadeInUp
       animate__faster
     `
-        },
-        hideClass: {
-          popup: `
+          },
+          hideClass: {
+            popup: `
       animate__animated
       animate__fadeOutDown
       animate__faster
     `
-        }
-      })
-    };
+          }
+        })
+      };
     }).catch(error => console.log(error))
     document.getElementById(reviewModalId).close();
   }
+const handleCancel = (e) => {
+  e.preventDefault();
+
+ 
+  const now = new Date();
+  const cancelDate = new Intl.DateTimeFormat('en-US', {
+    year: 'numeric', month: '2-digit', day: '2-digit'
+  }).format(now);
+console.log(date,cancelDate)
+  
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, cancel it!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+   
+      axios.delete(`http://localhost:5000/bookings/${roomId}?cancelDate=${cancelDate}&bookingDate=${date}`)
+        .then(res => {
+          console.log(res.data);
+          Swal.fire({
+            title: "Cancelled!",
+            text: "Your booking has been cancelled.",
+            icon: "success"
+          });
+        })
+        .catch(error => {
+          if (error.response && error.response.status === 400) {
+            Swal.fire({
+              position: 'center',
+              title: error.response.data,
+              icon: 'error',
+              showConfirmButton: false,
+              timer: 1500,
+            });
+
+            
+            axios.put(`http://localhost:5000/hotels/${roomId}`, {
+              availability: true
+            })
+              .then(res => {
+                console.log("Room availability updated:", res.data);
+              })
+              .catch(err => {
+                console.log("Error updating availability:", err);
+              });
+          } else {
+            console.log("Unexpected error:", error);
+          }
+        });
+
+      console.log("Cancel attempt:", { cancelDate, bookingDate: date }, roomId);
+    }
+  });
+};
 
 
   return (
@@ -183,7 +243,7 @@ const BookingsTableRow = ({ index, Booking }) => {
 
         </div>
 
-        <button className='btn btn-primary'>Cancel Review</button>
+        <button onClick={handleCancel} className='btn btn-primary'>Cancel Booking</button>
       </td>
     </tr>
   );
