@@ -15,7 +15,7 @@ const RoomDetails = () => {
     const { user } = useContext(AuthContext)
     const navigate = useNavigate()
     const Location = useLocation()
-    const { roomId, name, bannerImage, description, price, view, occupancy,roomSize,roomBeds, image, bedType, rating, availability } = useLoaderData()
+    const { roomId, name, bannerImage, description, price, view, occupancy, roomSize, roomBeds, image, bedType, rating, availability } = useLoaderData()
     const [reviews, setReviews] = useState([]);
     const [available, setAvailable] = useState(availability)
     // const [booking,setBooking]=useState(false)
@@ -186,23 +186,44 @@ const RoomDetails = () => {
                 <div className=' text-center space-y-2 mt-12'>
 
                     <div className='bg-blue-100 text-black px-7 py-16 border-2'>
-                        {
-                            !reviews.length == 0 ? reviews.map(reviewDetails => <div>
-                                <div className="avatar">
-                                    <div className="mask mask-hexagon-2 w-24">
-                                        <img src={reviewDetails.userImage} />
-                                    </div>
-                                </div>
-                                <h1>{reviewDetails.username}</h1>
-                                <h1>{reviewDetails.rating}</h1>
-                                <p>{reviewDetails.comment}</p>
-                                <h5>{reviewDetails.timestamp}</h5>
-
-
-                            </div>) : <div><h1>There are no reviews for this room</h1></div>
-                        }
-
+                        {reviews.length > 0 ? (
+                            <Swiper
+                                modules={[Autoplay, Pagination]}
+                                spaceBetween={20}
+                                slidesPerView={1}
+                                breakpoints={{
+                                    640: { slidesPerView: 1 },
+                                    768: { slidesPerView: 2 },
+                                    1024: { slidesPerView: 3 },
+                                }}
+                                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                                pagination={{ clickable: true }}
+                                loop={true}
+                                className="my-10"
+                            >
+                                {reviews.map((reviewDetails, index) => (
+                                    <SwiperSlide key={index}>
+                                        <div className="bg-white p-6 rounded-xl shadow-md h-full flex flex-col items-center text-center">
+                                            <div className="avatar mb-4">
+                                                <div className="mask mask-hexagon-2 w-24">
+                                                    <img src={reviewDetails.userImage} alt="User" />
+                                                </div>
+                                            </div>
+                                            <h1 className="text-lg font-semibold">{reviewDetails.username}</h1>
+                                            <p className="text-yellow-600 font-bold mt-1">Rating: {reviewDetails.ratings}</p>
+                                            <p className="text-sm text-gray-600 mt-2 mb-3">{reviewDetails.comment}</p>
+                                            <h5 className="text-xs text-gray-400">{reviewDetails.timestamp}</h5>
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        ) : (
+                            <div>
+                                <h1>There are no reviews for this room</h1>
+                            </div>
+                        )}
                     </div>
+
                     <div className="card-actions justify-center my-7">
 
                         {/* You can open the modal using document.getElementById('ID').showModal() method */}
