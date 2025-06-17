@@ -3,12 +3,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData, useLocation, useNavigate, } from 'react-router';
 import { AuthContext } from '../AuthContext';
 import Swal from 'sweetalert2';
-
+import { motion } from "framer-motion";
 const RoomDetails = () => {
     const { user } = useContext(AuthContext)
     const navigate = useNavigate()
     const Location = useLocation()
-    const { roomId, name, description, price, location, image, bedType, rating, availability } = useLoaderData()
+    const { roomId, name,bannerImage, description, price, view,amenities, image, bedType, rating, availability } = useLoaderData()
     const [reviews, setReviews] = useState([]);
     const [available, setAvailable] = useState(availability)
     // const [booking,setBooking]=useState(false)
@@ -49,7 +49,7 @@ const RoomDetails = () => {
             description,
             date,
             price,
-            location,
+           
             image,
             bedType,
             rating
@@ -89,15 +89,41 @@ const RoomDetails = () => {
     return (
         <div >
 
-            <div className='my-9 mx-6 bg-amber-100 text-black p-4 rounded-2xl'>
-                <div><img src={image} alt="" /></div>
+            <div className='my-9 sm:mx-6 mx-2  text-black p-4 '>
+                <div><img className='rounded-2xl mb-20 shadow-lg shadow-black' src={bannerImage} alt="" /></div>
+                
+            <motion.h1 
+           
+            initial={{ opacity: 0, x: 100, scale: 0 }}
+            whileInView={{ opacity: 1, x: [0, -10], scale: 1 }}
+            transition={{ duration: 1.2}}
+             className='md:text-5xl text-3xl md:mx-10 my-9 font-bold fascinate-inline-regular text-amber-700'>{name}</motion.h1>
+
+                <div  className='flex flex-col md:flex-row items-center justify-between gap-5'>
+                    <motion.div
+                    whileInView={{ opacity: 1, x: [-100, 0],  }}
+                    transition={{ duration: 1.2}}
+                    className='flex-1'>
+                        <img className='rounded-2xl' src={image} alt="" />
+                    </motion.div>
+                    <div className='flex-1'> 
+                        
+                    <p className='text-[20px] font-semibold exo-2 text-amber-900'>{description}</p>
+                    <div className='flex fbg-[#C19A6B]lex-col md:flex-row gap-5 flex-wrap justify-between items-center'>
+                        <div className='bg-[#C19A6B] text-white px-5 py-12 rounded-full text-center my-12'>
+                            <h4 className='text-[20px] font-semibold'>PRICE: {price}</h4>
+                        </div>
+                         <div className='bg-[#C19A6B] text-white px-5 py-12 rounded-full text-center'>
+                            <h4 className='text-[20px] font-semibold'>RATINGS: {rating}</h4>
+                        </div>
+                         <div className='bg-[#C19A6B] text-white px-5 py-12 rounded-full text-center'>
+                            <h4 className='text-[20px] font-semibold'>BED: {bedType}</h4>
+                        </div>
+                    </div>
+                    </div>
+                </div>
                 <div className=' text-center space-y-2 mt-12'>
-                    <h1 className='text-3xl'>{name}</h1>
-                    <p className='text-[20px]'>{description}</p>
-                    <h4>PRICE: {price}</h4>
-                    <h5>Ratings: {rating}</h5>
-                    <h4>{location}</h4>
-                    <h2>{bedType}</h2>
+                   
                     <div className='bg-blue-100 text-black px-7 py-16 border-2'>
                         {
                             !reviews.length == 0 ? reviews.map(reviewDetails => <div>
@@ -114,9 +140,7 @@ const RoomDetails = () => {
 
                             </div>) : <div><h1>There are no reviews for this room</h1></div>
                         }
-                        <div className="card-actions justify-end my-7">
-                            <button onClick={handleDate} className="btn btn-primary">Give Review</button>
-                        </div>
+                       
                     </div>
                     <div className="card-actions justify-center my-7">
 

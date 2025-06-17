@@ -1,6 +1,7 @@
  @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
- .lilita-one-regular {
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+  .lilita-one-regular {
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -11,7 +12,11 @@
   font-weight: 400;
   font-style: normal;
 }
-
+.exo-2{
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+ 
+}
  .active{
     text-decoration: wavy;
     text-shadow: 2;
