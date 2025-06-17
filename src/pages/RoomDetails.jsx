@@ -69,7 +69,7 @@ const RoomDetails = () => {
         }).catch(error => {
             console.log(error)
         })
-        // update available status
+       
         axios.put(`http://localhost:5000/hotels/${roomId}`, {
             availability: false
         }).then(res => {

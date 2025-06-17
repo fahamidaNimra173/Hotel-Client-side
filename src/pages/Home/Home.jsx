@@ -4,6 +4,7 @@ import HotelCard from '../../Components/HotelCard';
 import { Map, Marker, } from 'pigeon-maps';
 import { Link } from 'react-router';
 import { Carousel } from 'react-responsive-carousel';
+import { motion } from "framer-motion";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const Home = () => {
@@ -105,7 +106,11 @@ const Home = () => {
 
 
 
-            <h1 className='text-3xl text-center my-9'>Top Rated Rooms</h1>
+            <motion.h1 
+            initial={{ opacity: 0, x: 20, scale: 0 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 1.2}}
+             className='text-3xl text-center my-9 font-bold fascinate-inline-regular text-amber-700'>Top Rated Rooms</motion.h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 lg:gap-5 mx-4'>
                 {
 
@@ -113,7 +118,12 @@ const Home = () => {
                 }
             </div>
             <div className='my-11 '>
-                <h1 className='text-3xl font-bold mx-7 my-6 text-amber-600 '>Live Hotel Location</h1>
+                 <motion.h1 
+            initial={{ opacity: 0, x: 100, scale: 0 }}
+            whileInView={{ opacity: 1, x: [0, -10], scale: 1 }}
+            transition={{ duration: 1.2}}
+             className='text-3xl mx-5 md:mx-10 my-9 font-bold fascinate-inline-regular text-amber-700'>Live Hotel Location</motion.h1>
+                
                 <Map height={400} defaultCenter={radissonCoords} defaultZoom={15}>
                     <Marker anchor={radissonCoords}>
                         <img

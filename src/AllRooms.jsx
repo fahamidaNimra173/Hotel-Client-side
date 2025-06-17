@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import HotelCard from './Components/HotelCard';
+import { motion } from "framer-motion";
 
 const AllRooms = () => {
     const [hotels, setHotels] = useState([]);
@@ -19,11 +20,15 @@ const AllRooms = () => {
     }, [sort]);
     return (
         <div>
+             <motion.h1 
+            initial={{ opacity: 0, x: 20, scale: 0 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 1.2}}
+             className='text-3xl text-center my-9 font-bold fascinate-inline-regular text-amber-700'>~~All Rooms~~</motion.h1>
 
-            <h1 className='text-3xl text-center my-9 ' >All Rooms</h1>
-            <div className='mb-4'>
-                <label className='font-semibold '>Sort by:</label>
-                <select onChange={(e) => setSort(e.target.value)} className='ml-2 border text-black px-2 py-1 bg-blue-100 rounded'>
+            <div className='mb-4 mx-4 md:mx-12 '>
+                <label className='font-bold text-[20px] lilita-one-regular my-15 '>Sort by:</label>
+                <select onChange={(e) => setSort(e.target.value)} className='ml-2 my-15 border text-black px-2 py-1 bg-blue-100 rounded'>
                     <option value="">Default</option>
                     <option value="price_asc">Price Low to High</option>
                     <option value="price_desc">Price High to Low</option>

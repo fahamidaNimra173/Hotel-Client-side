@@ -23,12 +23,10 @@ const Navbar = () => {
     }
     return (
         <div>
-            <div className="navbar sticky top-0 z-100
-                bg-gradient-to-b from-amber-600 via-[#1F2937] to-black
-                backdrop-blur-lg
+            <div className="navbar sticky top-0 z-100 bg-gradient-to-b from-amber-600 via-[#1F2937] to-black backdrop-blur-lg 
                 border-b border-amber-600
                 shadow-lg shadow-amber-700/40
-                py-6 px-6 lg:px-28 lobster text-white">
+                py-6 md:px-6 px-2 lg:px-28 lobster text-white">
 
 
 

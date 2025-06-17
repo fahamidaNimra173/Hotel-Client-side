@@ -1,12 +1,17 @@
  @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
-
+  @import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
  .lilita-one-regular {
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
- 
+ .fascinate-inline-regular {
+  font-family: "Fascinate Inline", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
  .active{
     text-decoration: wavy;
     text-shadow: 2;
