@@ -4,11 +4,18 @@ import { useLoaderData, useLocation, useNavigate, } from 'react-router';
 import { AuthContext } from '../AuthContext';
 import Swal from 'sweetalert2';
 import { motion } from "framer-motion";
+import { IoBed } from "react-icons/io5";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
+import { FcMoneyTransfer, FcRating } from "react-icons/fc";
 const RoomDetails = () => {
     const { user } = useContext(AuthContext)
     const navigate = useNavigate()
     const Location = useLocation()
-    const { roomId, name,bannerImage, description, price, view,amenities, image, bedType, rating, availability } = useLoaderData()
+    const { roomId, name, bannerImage, description, price, view, occupancy,roomSize,roomBeds, image, bedType, rating, availability } = useLoaderData()
     const [reviews, setReviews] = useState([]);
     const [available, setAvailable] = useState(availability)
     // const [booking,setBooking]=useState(false)
@@ -49,7 +56,7 @@ const RoomDetails = () => {
             description,
             date,
             price,
-           
+
             image,
             bedType,
             rating
@@ -69,7 +76,7 @@ const RoomDetails = () => {
         }).catch(error => {
             console.log(error)
         })
-       
+
         axios.put(`http://localhost:5000/hotels/${roomId}`, {
             availability: false
         }).then(res => {
@@ -80,50 +87,104 @@ const RoomDetails = () => {
         })
         setAvailable(false)
     }
-    const handleDate=e=>{
-        e.preventDefault()
-        const date=new Date() 
-        console.log(date)
-    }
 
     return (
         <div >
 
             <div className='my-9 sm:mx-6 mx-2  text-black p-4 '>
                 <div><img className='rounded-2xl mb-20 shadow-lg shadow-black' src={bannerImage} alt="" /></div>
-                
-            <motion.h1 
-           
-            initial={{ opacity: 0, x: 100, scale: 0 }}
-            whileInView={{ opacity: 1, x: [0, -10], scale: 1 }}
-            transition={{ duration: 1.2}}
-             className='md:text-5xl text-3xl md:mx-10 my-9 font-bold fascinate-inline-regular text-amber-700'>{name}</motion.h1>
 
-                <div  className='flex flex-col md:flex-row items-center justify-between gap-5'>
+                <motion.h1
+
+                    initial={{ opacity: 0, x: 100, scale: 0 }}
+                    whileInView={{ opacity: 1, x: [0, -10], scale: 1 }}
+                    transition={{ duration: 1.2 }}
+                    className='md:text-5xl text-3xl md:mx-10 my-9 font-bold fascinate-inline-regular text-amber-700'>{name}</motion.h1>
+
+                <div className='flex flex-col md:flex-row items-center justify-between gap-5'>
                     <motion.div
-                    whileInView={{ opacity: 1, x: [-100, 0],  }}
-                    transition={{ duration: 1.2}}
-                    className='flex-1'>
+                        whileInView={{ opacity: 1, x: [-100, 0], }}
+                        transition={{ duration: 1.2 }}
+                        className='flex-1'>
                         <img className='rounded-2xl' src={image} alt="" />
                     </motion.div>
-                    <div className='flex-1'> 
-                        
-                    <p className='text-[20px] font-semibold exo-2 text-amber-900'>{description}</p>
-                    <div className='flex fbg-[#C19A6B]lex-col md:flex-row gap-5 flex-wrap justify-between items-center'>
-                        <div className='bg-[#C19A6B] text-white px-5 py-12 rounded-full text-center my-12'>
-                            <h4 className='text-[20px] font-semibold'>PRICE: {price}</h4>
-                        </div>
-                         <div className='bg-[#C19A6B] text-white px-5 py-12 rounded-full text-center'>
-                            <h4 className='text-[20px] font-semibold'>RATINGS: {rating}</h4>
-                        </div>
-                         <div className='bg-[#C19A6B] text-white px-5 py-12 rounded-full text-center'>
-                            <h4 className='text-[20px] font-semibold'>BED: {bedType}</h4>
+                    <div className='flex-1'>
+
+                        <p className='text-[20px] font-semibold exo-2 text-amber-900'>{description}</p>
+                        <div className='flex fbg-[#C19A6B]lex-col md:flex-row gap-5 flex-wrap justify-between mx-auto items-center'>
+                            <div className='bg-[#C19A6B] text-white px-5 py-9 rounded-4xl text-center my-12'>
+                                <h4 className='flex items-center gap-2 text-[20px] font-semibold'> <FcMoneyTransfer /> PRICE: {price}</h4>
+                            </div>
+                            <div className=' flex  bg-[#C19A6B] text-white px-5 py-9 rounded-4xl text-center'>
+                                <h4 className='flex items-center gap-2 text-[20px] font-semibold'><FcRating /> RATINGS: {rating}</h4>
+                            </div>
+                            <div className='bg-[#C19A6B] text-white px-5 py-9 rounded-4xl text-center'>
+                                <h4 className='flex items-center gap-2 text-[20px] font-semibold'><IoBed /> BED: {bedType}</h4>
+                            </div>
                         </div>
                     </div>
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+                <div className="my-12 w-full max-w-md md:max-w-2xl lg:max-w-5xl bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 mx-auto">
+                    <h2 className="text-2xl font-semibold text-amber-700 mb-4 text-center">Room Overview</h2>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="flex items-center gap-3">
+                            <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div>
+                                <p className="text-gray-700 font-medium">Room Size</p>
+                                <p className="text-sm text-gray-500">{roomSize}</p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center gap-3">
+                            <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div>
+                                <p className="text-gray-700 font-medium">Room Beds</p>
+                                <p className="text-sm text-gray-500">{roomBeds}</p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center gap-3">
+                            <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div>
+                                <p className="text-gray-700 font-medium">Occupancy</p>
+                                <p className="text-sm text-gray-500">{occupancy}</p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center gap-3">
+                            <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div>
+                                <p className="text-gray-700 font-medium">View</p>
+                                <p className="text-sm text-gray-500">{view}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+
+
+
+
+
                 <div className=' text-center space-y-2 mt-12'>
-                   
+
                     <div className='bg-blue-100 text-black px-7 py-16 border-2'>
                         {
                             !reviews.length == 0 ? reviews.map(reviewDetails => <div>
@@ -140,7 +201,7 @@ const RoomDetails = () => {
 
                             </div>) : <div><h1>There are no reviews for this room</h1></div>
                         }
-                       
+
                     </div>
                     <div className="card-actions justify-center my-7">
 
@@ -157,10 +218,10 @@ const RoomDetails = () => {
                                     <h3 className="font-bold text-lg">{name}</h3>
                                     {available === true ? <h1>Available</h1> : <h1>Not Available</h1>
                                     }
-                                    <p className="py-4">{description}</p>
+                                    <p className="py-4">Suitable For {occupancy} </p>
                                     <div className='flex mx-auto gap-5 justify-center'>
                                         <h3 className='bg-pink-400 text-[16px] font-bold rounded-2xl px-12 py-3'>{price} BDT</h3>
-                                        <h3 className='bg-pink-400 text-[16px] font-bold rounded-2xl px-12 py-3'>{bedType}</h3>
+                                        <h3 className='bg-pink-400 text-[16px] font-bold rounded-2xl px-12 py-3'>BED: {bedType}</h3>
                                     </div>
                                     <h1 className='mt-9 mb-3 '>please give your booking date</h1>
                                     <form onSubmit={handleConfirm} >
