@@ -7,6 +7,7 @@ import { Carousel } from 'react-responsive-carousel';
 import { motion } from "framer-motion";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Modal from '../../Components/Modal';
+import HomeSections from '../../Components/Homesections';
 
 const Home = () => {
     
@@ -118,7 +119,11 @@ const Home = () => {
                     hotels.map(hotel => <HotelCard key={hotel.roomId} hotel={hotel}></HotelCard>)
                 }
             </div>
-            <div className='my-11 '>
+
+            <HomeSections></HomeSections>
+
+
+            <div className='mb-11 mt-20 '>
                  <motion.h1 
             initial={{ opacity: 0, x: 100, scale: 0 }}
             whileInView={{ opacity: 1, x: [0, -10], scale: 1 }}

@@ -13,8 +13,8 @@ const HomeSections = () => {
           className="w-full md:w-1/2"
         >
           <img
-            src="https://i.ibb.co/GQ7z9tkK/herbal-compress-herbal-spa-treatment-equipments-put-dark-floor.jpg"
-            alt="Spa Services"
+            src="https://i.ibb.co/4HWgYy3/attractive-african-woman-enjoying-face-massage-spa-salon.jpg"
+            alt=""
             className="rounded-lg shadow-lg w-full h-full object-cover"
           />
         </motion.div>
