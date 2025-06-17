@@ -6,9 +6,10 @@ import { Link } from 'react-router';
 import { Carousel } from 'react-responsive-carousel';
 import { motion } from "framer-motion";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Modal from '../../Components/Modal';
 
 const Home = () => {
-
+    
     const [hotels, setHotels] = useState([]);
     const radissonCoords = [22.3476, 91.8231];
 
@@ -24,7 +25,7 @@ const Home = () => {
 
     return (
         <div >
-
+            <Modal></Modal>
     <Carousel
       showThumbs={false}
       showStatus={false}
