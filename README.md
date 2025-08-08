@@ -1,9 +1,9 @@
 # AurIs — A Complete Hotel Booking Platform 🏨
 
 
-<img src="https://i.ibb.co.com/1f0cvwq6/Screenshot-2025-08-08-183015.png" alt="Screenshot" width="600" />
+<img src="https://i.ibb.co/1f0cvwq6/Screenshot-2025-08-08-183015.png" alt="Screenshot" width="600" />
 
-<img src="" alt="AurIs Hotel Screenshot" width="800"/>
+
 AurIs is a full-featured hotel booking web application where users can browse rooms, check availability, book, update or cancel reservations, and leave reviews. It includes a live map, featured rooms, special offers popup, review system, secure login, and booking restrictions to ensure fairness.
 
 🔗 Live Project: https://hotel-client-side.web.app/
