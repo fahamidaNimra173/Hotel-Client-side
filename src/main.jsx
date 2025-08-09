@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import './App.css'
 import App from './App.jsx'
 
 import { createBrowserRouter, RouterProvider } from 'react-router'
@@ -15,6 +16,7 @@ import AllRooms from './AllRooms.jsx'
 import { ToastContainer } from 'react-toastify'
 import RoomDetails from './pages/RoomDetails.jsx'
 import ErrorPath from './ErrorPath.jsx'
+import AboutUs from './pages/AboutUs.jsx'
 
 
 
@@ -47,6 +49,11 @@ const router = createBrowserRouter([
         path:'allrooms',
        
         Component:AllRooms
+      },
+        {
+        path:'aboutus',
+       
+        Component:AboutUs
       },
       {
         path:'roomDetails/:id',

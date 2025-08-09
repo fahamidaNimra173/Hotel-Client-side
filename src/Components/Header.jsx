@@ -23,9 +23,9 @@ const Navbar = () => {
     }
     return (
         <div>
-            <div className="navbar fixed top-0 z-100 bg-white
-                shadow-lg shadow-amber-700/40
-                py-6 md:px-6 px-2 lg:px-28 lobster text-white">
+            <div className="navbar fixed top-0 z-100 bg-[#a8cc61]
+                 shadow-black shadow-inner dark:bg-[#7a9e33]
+                py-6 md:px-6 px-2 lg:px-28 lobster text-black ">
 
 
 
@@ -44,6 +44,8 @@ const Navbar = () => {
 
                                 <NavLink to='/allrooms'>All Rooms</NavLink>
                                 <NavLink to='/mybookings'>My Booking</NavLink>
+                                <NavLink to='/aboutus'>About Us</NavLink>
+                                <NavLink to='/'>Find Us</NavLink>
                                 {
                                     !user && (<>
                                         <NavLink to='/login'>    <span className='font-medium '> LogIn</span></NavLink>
@@ -60,8 +62,8 @@ const Navbar = () => {
                             initial={{ opacity: 0, y: -20, scale: 0.9 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             transition={{ duration: 1.2, ease: "easeOut" }}
-                            className=" text-2xl font-bold text-black tracking-widest">
-                            A<span className='text-[33px] text-amber-500'>ur</span>is
+                            className=" text-2xl font-frieska font-bold text-black tracking-widest">
+                            A<span className='text-[33px] font-frieska  text-white'>ur</span>is
                         </motion.h1>
                     </div>
 
@@ -74,6 +76,8 @@ const Navbar = () => {
 
                         <NavLink to='/allrooms'>All Rooms</NavLink>
                         <NavLink to='/mybookings'>My Booking</NavLink>
+                         <NavLink to='/aboutus'>About Us</NavLink>
+                                <NavLink to='/'>Find Us</NavLink>
                         {/* {
                             !user && (<>
                                 <NavLink to='/login'>    <span className='font-medium '> LogIn</span></NavLink>
@@ -91,11 +95,11 @@ const Navbar = () => {
                 </div>
                 <div className=" navbar-end">
 
-                    <div className='space-x-2 hidden lg:block overpass'>
+                    <div className='space-x-2 hidden lg:flex  overpass'>
                         {
                             !user && (<>
-                                <button className='btn rounded-none font-bold bg-amber-500 text-white'><NavLink to='/login'>    <span className='font-medium '> LogIn</span></NavLink></button>
-                                <button className='btn rounded-none font-bold bg-amber-500 text-white'><NavLink to='/register'> <span className='font-medium '> Register</span></NavLink></button>
+                                <button className='btnUI text-black '><NavLink to='/login'>  LogIn  <span > </span></NavLink></button>
+                                <button className='btnUI text-black '><NavLink to='/register'> Register <span> </span></NavLink></button>
 
 
                             </>)

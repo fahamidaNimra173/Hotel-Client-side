@@ -4,61 +4,46 @@ import { FaSpa, FaConciergeBell, FaSwimmer, FaWifi, FaUtensils, FaStar } from 'r
 
 const HomeSections = () => {
   return (
-    <div className="space-y-24 mt-10">
-      <section className="flex flex-col-reverse md:flex-row items-center max-w-6xl mx-auto gap-10 px-6">
-        <motion.div
-          initial={{ opacity: 0, x: -100, scale: 0.9 }}
-          whileInView={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="w-full md:w-1/2"
+    <div className='my-30 px-2 lg:px-28'>
+      <div
+        className="relative h-[500px] md:h-[600px] bg-cover bg-center flex flex-col justify-end"
+        style={{
+          backgroundImage:
+            "url('https://i.ibb.co.com/gMXcR2j4/Blue-and-White-Simple-Hotel-Promotion-Presentation.png')",
+        }}
+      >
+        {/* Overlay for better text visibility */}
+        <div className="absolute inset-0 dark:bg-black/40" />
+
+        {/* Title at top */}
+        <motion.h1
+          className="cinzel text-white  text-3xl md:text-5xl font-bold p-6 md:p-12 absolute mt-10 top-0  left-10 right-0 z-10"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
-          {/* <img
-            src="https://i.ibb.co/4HWgYy3/attractive-african-woman-enjoying-face-massage-spa-salon.jpg"
-            alt=""
-            className="rounded-lg shadow-lg w-full h-full object-cover"
-          /> */}
-        </motion.div>
+          Our Promise, Your Comfort
+        </motion.h1>
 
-        <div className="w-full md:w-1/2 space-y-5">
-          <h2 className="text-3xl font-bold text-amber-700">Relaxing Spa & Hotel Facilities</h2>
-          <p className="text-gray-600">
-            Enjoy a premium experience with top-class spa treatments, modern amenities, and 24/7 service designed for your comfort and luxury.
-          </p>
-          <ul className="grid grid-cols-2 gap-4 text-gray-700 mt-4">
-            <li className="flex items-center gap-2"><FaSpa className="text-amber-600" /> Wellness Spa</li>
-            <li className="flex items-center gap-2"><FaConciergeBell className="text-amber-600" /> 24/7 Concierge</li>
-            <li className="flex items-center gap-2"><FaSwimmer className="text-amber-600" /> Infinity Pool</li>
-            <li className="flex items-center gap-2"><FaWifi className="text-amber-600" /> Free Wi-Fi</li>
-            <li className="flex items-center gap-2"><FaUtensils className="text-amber-600" /> Gourmet Dining</li>
-          </ul>
+        {/* Content (description) aligned bottom */}
+        <div className="relative z-10 -mt-11 p-6 md:p-12">
+          <motion.p
+            className="castoro text-white text-[18px] font-semibold md:text-lg lg:ml-12 ml-5 p-6 md:p-6 mb-4 z-10"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <span className="hidden md:inline">
+              We believe every stay should feel like coming home — only better. Our goal is to blend the warmth of genuine hospitality with the ease of modern convenience, creating a space where every guest feels valued, relaxed, and inspired to explore. From the smallest detail to the grandest view, we’re here to make your moments unforgettable.
+            </span>
+            <span className="md:hidden">
+              Every stay should feel like home — only better. We blend warmth with convenience for unforgettable moments.
+            </span>
+          </motion.p>
         </div>
-      </section>
-
-      <section className="bg-blue-50 py-16 px-6">
-        <div className="max-w-6xl mx-auto text-center space-y-8">
-          <h2 className="text-3xl font-bold text-blue-800">Why Choose Our Hotel?</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            We ensure an unforgettable stay with unmatched service, modern design, and warm hospitality. Here’s what makes us different:
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            <div className="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
-              <FaStar className="text-amber-600 text-3xl mb-3" />
-              <h3 className="font-semibold text-lg">Award-Winning Service</h3>
-              <p className="text-sm text-gray-500 mt-2">Recognized for excellence in hospitality and customer satisfaction.</p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
-              <FaWifi className="text-amber-600 text-3xl mb-3" />
-              <h3 className="font-semibold text-lg">High-Speed Internet</h3>
-              <p className="text-sm text-gray-500 mt-2">Stay connected with blazing-fast internet throughout the property.</p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
-              <FaConciergeBell className="text-amber-600 text-3xl mb-3" />
-              <h3 className="font-semibold text-lg">Personalized Experience</h3>
-              <p className="text-sm text-gray-500 mt-2">We tailor your stay to meet your needs with exceptional attention to detail.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };

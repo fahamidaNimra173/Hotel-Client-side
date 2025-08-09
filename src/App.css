@@ -1,9 +1,28 @@
- @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
   .lilita-one-regular {
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'Frieska';
+  src: url('/font/FRIESKA-demo-BF6486a3bec78fe.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.cinzel {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.castoro {
+  font-family: "Castoro Titling", serif;
+ 
   font-style: normal;
 }
 
@@ -24,3 +43,57 @@
     font-weight: 700;
   }
   
+  /* From Uiverse.io by adamgiebl */ 
+.btnUI {
+  border: none;
+  display: block;
+  position: relative;
+  padding: 0.5em 2em;
+  font-size: 18px;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  color: black;
+  z-index: 1;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.btnUI span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  border: 2px solid #f8952a;
+}
+
+.btnUI span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8%;
+  height: 500%;
+  background: var(--lightgray);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all 0.7s;
+}
+
+.btnUI:hover span::before {
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  background: #f8952a;
+}
+
+.btnUI:hover {
+  color: white;
+}
+
+.btnUI:active span::before {
+  background: #f8952a;
+}

@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 import { Carousel } from 'react-responsive-carousel';
 import { motion } from "framer-motion";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import Modal from '../../Components/Modal';
+// import Modal from '../../Components/Modal';
 import HomeSections from '../../Components/Homesections';
 
 const Home = () => {
@@ -26,7 +26,7 @@ const Home = () => {
 
     return (
         <div >
-            <Modal></Modal>
+            {/* <Modal></Modal> */}
     <Carousel
       showThumbs={false}
       showStatus={false}
@@ -100,34 +100,17 @@ const Home = () => {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1.2}}
              className='text-3xl text-center my-9 font-bold fascinate-inline-regular text-amber-700'>Top Rated Rooms</motion.h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 lg:gap-5 mx-4'>
+            {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 lg:gap-5 mx-4'>
                 {
 
                     hotels.map(hotel => <HotelCard key={hotel.roomId} hotel={hotel}></HotelCard>)
                 }
-            </div>
+            </div> */}
 
             <HomeSections></HomeSections>
 
 
-            <div className='mb-11 mt-20 '>
-                 <motion.h1 
-            initial={{ opacity: 0, x: 100, scale: 0 }}
-            whileInView={{ opacity: 1, x: [0, -10], scale: 1 }}
-            transition={{ duration: 1.2}}
-             className='text-3xl mx-5 md:mx-10 my-9 font-bold fascinate-inline-regular text-amber-700'>Live Hotel Location</motion.h1>
-                
-                <Map height={400} defaultCenter={radissonCoords} defaultZoom={15}>
-                    <Marker anchor={radissonCoords}>
-                        <img
-                            src="https://i.ibb.co/nZvbkFK/2355144.jpg"
-                            alt="Radisson Blu Hotel"
-                            width={50}
-                            height={50}
-                        />
-                    </Marker>
-                </Map>
-            </div>
+        
         </div>
     );
 };
