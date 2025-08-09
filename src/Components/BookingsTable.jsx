@@ -5,19 +5,21 @@ const BookingsTable = ({myBookingsPromise}) => {
     const myBookings=use(myBookingsPromise)
     const [myBooking,setMyBookings]=useState(myBookings)
     return (
-       <div className="overflow-x-auto">
+      <div>
+        {myBooking.length>0?     <div className="overflow-x-auto">
   <table className="table table-xs ">
     <thead>
       <tr>
-        <th className='text-[23px] text-white'>NO.</th>
-        <th className='text-[23px] text-white'>Name</th>
-        <th className='text-[23px] text-white'>Bed Type</th>
-        <th className='text-[23px] text-white'>location</th>
-        <th className='text-[23px] text-white'>Booking Date</th>
-        <th className='text-[23px] text-white'>Price</th>
+        <th className='text-[23px] text-black'>NO.</th>
+        <th className='text-[23px] text-black'>Name</th>
+        <th className='text-[23px] text-black'>Bed Type</th>
+       
+        <th className='text-[23px] text-black'>Booking Date</th>
+        <th className='text-[23px] text-black'>Price</th>
       </tr>
     </thead>
     <tbody >
+ 
       
        {
         myBooking.map((Booking,index)=><BookingsTableRow index={index}
@@ -28,7 +30,9 @@ const BookingsTable = ({myBookingsPromise}) => {
     </tbody>
    
   </table>
-</div>
+</div> :<h1 className='text-3xl text-center text-purple-700 font-bold my-30'>You have not Booked Any Room Yet</h1>}
+      </div>
+  
 
          
     );

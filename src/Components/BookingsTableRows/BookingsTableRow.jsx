@@ -25,7 +25,7 @@ const BookingsTableRow = ({ index, Booking,myBooking,setMyBookings }) => {
     e.preventDefault();
     const updatedDate = e.target.updatedDate.value;
 
-    axios.put(`http://localhost:5000/bookings/${roomId}`, {
+    axios.put(`https://hotel-server-side-mu.vercel.app/bookings/${roomId}`, {
       date: updatedDate,
     })
       .then((res) => {
@@ -73,7 +73,7 @@ const BookingsTableRow = ({ index, Booking,myBooking,setMyBookings }) => {
       roomId
 
     }
-    axios.post(`http://localhost:5000/reviews`, review).then(res => {
+    axios.post(`https://hotel-server-side-mu.vercel.app/reviews`, review).then(res => {
       console.log(res.data)
       if (res.data.insertedId) {
         Swal.fire({
@@ -119,7 +119,7 @@ console.log(date,cancelDate)
   }).then((result) => {
     if (result.isConfirmed) {
    
-      axios.delete(`http://localhost:5000/bookings/${roomId}?cancelDate=${cancelDate}&bookingDate=${date}`)
+      axios.delete(`https://hotel-server-side-mu.vercel.app/bookings/${roomId}?cancelDate=${cancelDate}&bookingDate=${date}`)
         .then(res => {
           console.log(res.data);
           Swal.fire({
@@ -130,7 +130,7 @@ console.log(date,cancelDate)
            const remainingBooking=myBooking.filter(book=>book.roomId !==roomId);
           setMyBookings(remainingBooking)
           
-                      axios.put(`http://localhost:5000/hotels/${roomId}`, {
+                      axios.put(`https://hotel-server-side-mu.vercel.app/hotels/${roomId}`, {
               availability: true
             })
               .then(res => {
@@ -170,7 +170,7 @@ console.log(date,cancelDate)
       <th className='text-[20px]'>{index + 1}</th>
       <td className='text-[20px]'>{name}</td>
       <td className='text-[20px]'>{bedType}</td>
-      <td className='text-[20px]'>{location}</td>
+      
 
       <td className='text-[20px]'>
         {newDate}
@@ -218,6 +218,7 @@ console.log(date,cancelDate)
               </div>
               <h3 className='font-bold text-lg text-center'> Dear {user.displayName} Give Your Valuable Review </h3>
               <form onSubmit={handleReviewPost} className='flex flex-col gap-4 mt-4 justify-center items-center'>
+                <input type="text" value={user.displayName} readOnly />
                 <div className='flex flex-col items-center'>
                   <label className='text-lg font-medium'>Your Rating:</label>
                   <StarRatings
@@ -229,13 +230,15 @@ console.log(date,cancelDate)
                     name='rating'
                     starDimension='30px'
                     starSpacing='5px'
+                    
                   />
                 </div>
 
                 <textarea
+                required
                   name='comment'
                   placeholder='Write your feedback here...'
-                  className='textarea textarea-info text-white text-[15px]'
+                  className='textarea textarea-info text-black text-[15px]'
                 ></textarea>
 
                 <div className='modal-action'>

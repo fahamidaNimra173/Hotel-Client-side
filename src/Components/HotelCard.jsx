@@ -28,12 +28,14 @@ const HotelCard = ({hotel}) => {
         </p>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 0 }}
-        whileHover={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }}
-        className="absolute inset-0 bg-gradient-to-r from-yellow-400/30 via-yellow-200/20 to-transparent backdrop-blur-sm flex flex-col md:flex-row justify-end md:justify-between items-start md:items-center px-6 py-6 md:py-8 opacity-0 group-hover:opacity-100 transition duration-500"
-      >
+     <motion.div
+  initial={{ opacity: 1 }}
+  whileHover={{ opacity: 1 }} 
+  transition={{ duration: 0.9 }}
+  className="absolute inset-0 bg-gradient-to-r from-yellow-400/30 via-yellow-200/20 to-transparent backdrop-blur-sm flex flex-col md:flex-row justify-end md:justify-between items-start md:items-center px-6 py-6 md:py-8 
+    opacity-100 md:opacity-0 md:group-hover:opacity-100 transition duration-500"
+>
+
         <div className="text-white md:max-w-[60%]">
           <h2 className="text-xl font-bold">{name}</h2>
           <p className="text-sm mt-1 text-black line-clamp-3">{description}</p>

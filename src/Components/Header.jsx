@@ -12,7 +12,7 @@ const Navbar = () => {
     const handleSignOut = e => {
         e.preventDefault();
         LogOut().then(() => {
-            alert('jhjgcccc')
+           
             toast('You have succesfully Logged Out')
             navigate('/')
         }
@@ -23,8 +23,7 @@ const Navbar = () => {
     }
     return (
         <div>
-            <div className="navbar sticky top-0 z-100 bg-gradient-to-b from-amber-600 via-[#1F2937] to-black backdrop-blur-lg 
-                border-b border-amber-600
+            <div className="navbar fixed top-0 z-100 bg-white
                 shadow-lg shadow-amber-700/40
                 py-6 md:px-6 px-2 lg:px-28 lobster text-white">
 
@@ -36,7 +35,7 @@ const Navbar = () => {
                     <div className='flex items-center '>
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost gap-5 mt-3  lg:hidden">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="white"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="black"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                             </div>
                             <ul
                                 tabIndex={0}
@@ -61,7 +60,7 @@ const Navbar = () => {
                             initial={{ opacity: 0, y: -20, scale: 0.9 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             transition={{ duration: 1.2, ease: "easeOut" }}
-                            className=" text-2xl font-bold text-white tracking-widest">
+                            className=" text-2xl font-bold text-black tracking-widest">
                             A<span className='text-[33px] text-amber-500'>ur</span>is
                         </motion.h1>
                     </div>
@@ -69,19 +68,19 @@ const Navbar = () => {
 
 
                 </div>
-                <div className="navbar-end hidden lg:flex gap-7 text-white ">
+                <div className="navbar-end hidden lg:flex gap-7 text-black ">
                     <ul className="  lg:flex text-[20px]  lg:space-x-4 ">
                         <NavLink to='/'>Home</NavLink>
 
                         <NavLink to='/allrooms'>All Rooms</NavLink>
                         <NavLink to='/mybookings'>My Booking</NavLink>
-                        {
+                        {/* {
                             !user && (<>
                                 <NavLink to='/login'>    <span className='font-medium '> LogIn</span></NavLink>
                                 <NavLink to='/register'> <span className='font-medium '> Register</span></NavLink>
                             </>)
 
-                        }
+                        } */}
 
 
 

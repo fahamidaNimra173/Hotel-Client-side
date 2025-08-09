@@ -14,6 +14,7 @@ import AuthProvider from './AuthProvider.jsx'
 import AllRooms from './AllRooms.jsx'
 import { ToastContainer } from 'react-toastify'
 import RoomDetails from './pages/RoomDetails.jsx'
+import ErrorPath from './ErrorPath.jsx'
 
 
 
@@ -44,26 +45,23 @@ const router = createBrowserRouter([
       ,
       {
         path:'allrooms',
-        // loader:()=> fetch('https://plant-app-server.vercel.app/plants'),
+       
         Component:AllRooms
       },
       {
         path:'roomDetails/:id',
-        loader:({params})=>fetch(`http://localhost:5000/hotels/${params.id}`),
+        loader:({params})=>fetch(`https://hotel-server-side-mu.vercel.app/hotels/${params.id}`),
         element:<RoomDetails></RoomDetails>
       },
-      // {
-      //   path:'update/:id',
-      //   loader:({params})=> fetch(`https://plant-app-server.vercel.app/plants/${params.id}`),
-      //   Component:UpdatePlant
-      // },
-      // {
-      //   path:'*',
-      // element:<ErrorPath></ErrorPath>
-      // }
+
        
-    ]
+    ],
+
   },
+  {
+    path:'*',
+    Component:ErrorPath
+  }
 ]);
 
 

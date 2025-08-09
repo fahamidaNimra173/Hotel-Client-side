@@ -9,7 +9,7 @@ const AllRooms = () => {
     const [sort, setSort] = useState('');
 
     useEffect(() => {
-        let url = 'http://localhost:5000/hotels';
+        let url = 'https://hotel-server-side-mu.vercel.app/hotels';
         if (sort) {
             url += `?sort=${sort}`;
         }

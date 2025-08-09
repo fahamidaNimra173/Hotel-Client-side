@@ -15,7 +15,7 @@ const Home = () => {
     const radissonCoords = [22.3476, 91.8231];
 
     useEffect(() => {
-        axios.get('http://localhost:5000/topratedhotels').then(res => {
+        axios.get('https://hotel-server-side-mu.vercel.app/topratedhotels').then(res => {
             const sliceData = res.data.slice(0, 6)
             setHotels(sliceData)
         }).catch(error => {
@@ -41,18 +41,12 @@ const Home = () => {
     >
       <div className="relative h-[500px] w-full">
                 <img
-                    src="https://i.ibb.co/NgC67wNd/view-romantic-castle-bedroom.jpg"
+                    src="https://i.ibb.co.com/35bKNW9Y/rsz-view-romantic-castle-bedroom.jpg"
                     alt="Banner Background"
                     className="h-full w-full object-cover brightness-40 "
                 />
-                <div className="absolute inset-0   bg-opacity-100"></div>
-                <div className="absolute top-4 left-6 z-10">
-                    <img
-                        src="https://i.ibb.co/tMx5YDRR/346743-PBCAER-386.jpg"
-                        alt="logo"
-                        className="h-19 w-30"
-                    />
-                </div>
+
+                
                 <div className="absolute bottom-0  w-full lg:right-30 lg:w-[800px] text-center z-10 bg-white/10 backdrop-blur-md rounded-lg p-4">
                     <h1 className="text-white text-4xl font-bold lilita-one-regular">Welcome to Your Luxury Stay</h1>
                     <p className="text-white text-[20px] font-medium t mt-2">Experience comfort, elegance, and relaxation</p>
@@ -61,18 +55,11 @@ const Home = () => {
             </div>
        <div className="relative h-[500px] w-full">
                 <img
-                    src="https://i.ibb.co/QjhqC2NF/silhouette-palm-tree-with-umbrella.jpg"
+                    src="https://i.ibb.co.com/5X5q2LQK/rsz-silhouette-palm-tree-with-umbrella.jpg"
                     alt="Banner Background"
                     className="h-full w-full object-cover brightness-40 "
                 />
-                <div className="absolute inset-0   bg-opacity-100"></div>
-                <div className="absolute top-4 left-6 z-10">
-                    <img
-                        src="https://i.ibb.co/tMx5YDRR/346743-PBCAER-386.jpg"
-                        alt="logo"
-                        className="h-19 w-30"
-                    />
-                </div>
+                
                 <div className="absolute bottom-0  w-full lg:right-30 lg:w-[800px] text-center z-10 bg-white/10 backdrop-blur-md rounded-lg p-4">
                     <h1 className="text-white text-4xl font-bold lilita-one-regular">Stay in Style and Comfort</h1>
                     <p className="text-white text-[20px] font-medium t mt-2">Luxury living tailored just for you</p>
@@ -81,7 +68,7 @@ const Home = () => {
             </div>
       <div className="relative h-[500px] w-full">
                 <img
-                    src="https://i.ibb.co/4ng3qjLy/long-corridor-showcase.jpg"
+                    src="https://i.ibb.co.com/WWy25NTS/rsz-long-corridor-showcase.jpg"
                     alt="Banner Background"
                     className="h-full w-full object-cover brightness-40 "
                 />

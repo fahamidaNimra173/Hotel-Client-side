@@ -46,7 +46,7 @@ const Register = () => {
             return
            }
         createUser(email,password).then((result)=>{
-            console.log(result.user)
+            console.log(result)
             setSuccess(true)
             navigate(location?.state||'/')
              toast('Signed in succesfully!');
@@ -78,11 +78,11 @@ const Register = () => {
             
             const handleLoginByGoogle=e=>{
             e.preventDefault();
-            console.log('bvbvsw ')
+            
        
     
             signInWithPopup(auth, provider).then((result)=>{
-            console.log(result.user)
+           
              navigate(location?.state||'/')
               toast('Signed in succesfully!');
          

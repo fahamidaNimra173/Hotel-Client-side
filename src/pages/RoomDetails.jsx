@@ -21,7 +21,7 @@ const RoomDetails = () => {
     // const [booking,setBooking]=useState(false)
 
     useEffect(() => {
-        axios.get('http://localhost:5000/reviews').then(res => {
+        axios.get('https://hotel-server-side-mu.vercel.app/reviews').then(res => {
             console.log(res.data.roomId)
             const review = res.data.filter(review => review.roomId == roomId)
             setReviews(review)
@@ -63,7 +63,7 @@ const RoomDetails = () => {
 
         }
         console.log(bookings)
-        axios.post('http://localhost:5000/bookings', bookings).then(res => {
+        axios.post('https://hotel-server-side-mu.vercel.app/bookings', bookings).then(res => {
             console.log(res.data)
             if (res.data.insertedId) {
                 Swal.fire({
@@ -77,7 +77,7 @@ const RoomDetails = () => {
             console.log(error)
         })
 
-        axios.put(`http://localhost:5000/hotels/${roomId}`, {
+        axios.put(`https://hotel-server-side-mu.vercel.app/hotels/${roomId}`, {
             availability: false
         }).then(res => {
             console.log(res.data)

@@ -12,11 +12,11 @@ const HomeSections = () => {
           transition={{ duration: 1 }}
           className="w-full md:w-1/2"
         >
-          <img
+          {/* <img
             src="https://i.ibb.co/4HWgYy3/attractive-african-woman-enjoying-face-massage-spa-salon.jpg"
             alt=""
             className="rounded-lg shadow-lg w-full h-full object-cover"
-          />
+          /> */}
         </motion.div>
 
         <div className="w-full md:w-1/2 space-y-5">
