@@ -23,7 +23,7 @@ const Navbar = () => {
     }
     return (
         <div>
-            <div className="navbar fixed top-0 z-100 bg-[#a8cc61]
+            <div className=" flex  w-full items-center lg:justify-center fixed top-0 z-100 bg-[#a8cc61]
                  shadow-black shadow-inner dark:bg-[#7a9e33]
                 py-6 md:px-6 px-2 lg:px-28 lobster text-black ">
 
@@ -31,7 +31,7 @@ const Navbar = () => {
 
 
 
-                <div className="navbar-start">
+                <div className="">
                     <div className='flex items-center '>
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost gap-5 mt-3  lg:hidden">
@@ -70,8 +70,8 @@ const Navbar = () => {
 
 
                 </div>
-                <div className="navbar-end hidden lg:flex gap-7 text-black ">
-                    <ul className="  lg:flex text-[20px]  lg:space-x-4 ">
+                <div className=" hidden  lg:flex lg:flex-1 justify-around  gap-7 text-black ">
+                    <ul className="  lg:flex  text-[20px]  lg:space-x-4 ">
                         <NavLink to='/'>Home</NavLink>
 
                         <NavLink to='/allrooms'>All Rooms</NavLink>
@@ -93,7 +93,7 @@ const Navbar = () => {
                     </ul>
 
                 </div>
-                <div className=" navbar-end">
+                <div className=" ">
 
                     <div className='space-x-2 hidden lg:flex  overpass'>
                         {
