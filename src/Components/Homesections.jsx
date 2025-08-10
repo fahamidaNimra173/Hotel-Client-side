@@ -52,7 +52,7 @@ const HomeSections = () => {
       </div>
 
       <div>
-        <h1 className='cinzel text-[#a8cc61] text-4xl text-center mb-10'>What Makes Us Different</h1>
+        <h1 className='cinzel text-[#a8cc61] dark:text-[#7a9e33] text-4xl text-center mb-10'>What Makes Us Different</h1>
         <div
           className="relative bg-fixed bg-center bg-cover h-[800px] flex items-center justify-center"
           style={{
@@ -86,7 +86,7 @@ const HomeSections = () => {
 
 
 
-      <div className='md:flex max-h-min gap-3 flex-col py-20 px-2 md:px-10 lg:px-20 md:flex-row bg-white '>
+      <div className='md:flex max-h-min gap-3 flex-col py-20 px-2 md:px-10 lg:px-20 md:flex-row bg-white dark:bg-black'>
         <div className='flex-1'>
           <div className='flex flex-col group'>
             <h1 className='cinzel mb-15 text-4xl text-[#f8952a] '>
@@ -95,11 +95,11 @@ const HomeSections = () => {
               Worth Waking Up For
             </h1>
             <img
-              className='h-52 object-cover shadow-2xl rounded-b-md shadow-white transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:rotate-2'
+              className='h-52 object-cover shadow-2xl rounded-b-md shadow-white dark:shadow-none transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:rotate-2'
               src="https://i.ibb.co.com/nsmFRWFh/breakfast-at-caravelle-saigon-5500238-1280.jpg"
               alt=""
             />
-            <p className='castoro my-15 text-[18px] text-emerald-700 font-bold transition-all duration-700 transform translate-y-10  group-hover:translate-y-0 group-hover:opacity-100'>
+            <p className='castoro my-15 text-[18px] text-emerald-700 dark:text-white font-bold transition-all duration-700 transform translate-y-10  group-hover:translate-y-0 group-hover:opacity-100'>
               Start your day with our complimentary gourmet breakfast, freshly prepared to please every taste.
               Enjoy fluffy pancakes drizzled with golden honey, buttery croissants, and freshly baked pastries alongside seasonal fruits and creamy yogurts.
               For a heartier start, savor crispy parathas, succulent grilled meats, and farm-fresh eggs cooked just the way you like.
@@ -133,6 +133,46 @@ const HomeSections = () => {
                 alt=""
               />
             </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div className="bg-[#fdf7c4] flex flex-col md:flex-row items-center justify-center py-16 px-6 md:px-20 gap-10">
+        {/* Left Side Text */}
+        <div className="flex-1">
+          <h2 className="text-sm tracking-widest text-gray-700 font-semibold mb-2">WELCOME TO</h2>
+          <h1 className="text-5xl font-bold text-[#7a8155] mb-6">LARANA SPA</h1>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            Indulge in a sanctuary of relaxation and rejuvenation.
+            Our spa offers world-class treatments, soothing aromas, and an atmosphere designed
+            to refresh your body and calm your mind. From therapeutic massages to rejuvenating
+            facials, every moment is tailored to your well-being.
+          </p>
+        </div>
+
+        {/* Right Side Images */}
+        <div className="flex-1 grid grid-cols-2 gap-4">
+          <div className="overflow-hidden rounded-lg col-span-2 md:col-span-1">
+            <img
+              src="https://i.ibb.co.com/SLWHM3v/spa3.jpg"
+              alt="Spa Room"
+              className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg">
+            <img
+              src="https://i.ibb.co.com/9mk1062j/spa2.jpg"
+              alt="Spa Lounge"
+              className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            />
+          </div>
+          <div className="overflow-hidden rounded-lg">
+            <img
+              src="https://i.ibb.co.com/DDxf5fLn/spa1.jpg"
+              alt="Spa Pool"
+              className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            />
           </div>
         </div>
       </div>
