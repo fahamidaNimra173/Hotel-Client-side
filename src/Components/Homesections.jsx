@@ -77,7 +77,7 @@ const HomeSections = () => {
                 transition={{ duration: 0.6, delay: index * 0.3 }}
                 className="text-white font-bold text-lg mb-4 "
               >
-                <span></span> <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 max-w-3xl mx-4">{point}</div>
+                <span></span> <div className="bg-white/10 backdrop-blur-md rounded-xl sm:p-8 p-2 max-w-3xl  md:mx-4">{point}</div>
               </motion.div>
             ))}
           </div>
@@ -124,7 +124,7 @@ const HomeSections = () => {
                   src="https://i.ibb.co.com/KcBT4QMq/pastries-1749603-1280.jpg"
                   alt=""
                 />
-              </div>
+              </div>.
             </div>
             <div className='col-span-3 overflow-hidden rounded-b-2xl group'>
               <img
@@ -141,13 +141,10 @@ const HomeSections = () => {
       <div className="bg-[#fdf7c4] dark:bg-[#3b3502]  relative flex flex-col md:flex-row items-center justify-center py-16   px-2 gap-30">
         {/* Left Side Text */}
         <div className="flex-1">
-          <h2 className="text-sm tracking-widest text-gray-700 dark:text-white font-semibold mb-2">WELCOME TO</h2>
-          <h1 className="text-5xl font-bold text-[#7a8155] dark:text-[#d57107] mb-6">LARANA SPA</h1>
+
+          <h1 className="text-5xl font-bold text-[#a8cc61] dark:text-[#d57107] mb-6">Larana Spa — Relaxation Right Here at Our Hotel</h1>
           <p className="text-gray-700 dark:text-white text-lg leading-relaxed">
-            Indulge in a sanctuary of relaxation and rejuvenation.
-            Our spa offers world-class treatments, soothing aromas, and an atmosphere designed
-            to refresh your body and calm your mind. From therapeutic massages to rejuvenating
-            facials, every moment is tailored to your well-being.
+           Enjoy total relaxation without leaving the hotel. At Larana Spa, we offer soothing massages, refreshing facials, and calming herbal treatments designed to help you unwind after a busy day. Whether you want to relax your body or clear your mind, our spa services are here to make your stay even better. Treat yourself to some peaceful “me time” just steps away from your room.
           </p>
         </div>
 

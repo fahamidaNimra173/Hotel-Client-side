@@ -17,6 +17,8 @@ import { ToastContainer } from 'react-toastify'
 import RoomDetails from './pages/RoomDetails.jsx'
 import ErrorPath from './ErrorPath.jsx'
 import AboutUs from './pages/AboutUs.jsx'
+import Termsandcondition from './Components/Terms&condition.jsx'
+import FindUs from './Components/FindUs.jsx'
 
 
 
@@ -54,6 +56,16 @@ const router = createBrowserRouter([
         path:'aboutus',
        
         Component:AboutUs
+      },
+       {
+        path:'findus',
+       
+        Component:FindUs
+      },
+       {
+        path:'termsandcondition',
+       
+        Component:Termsandcondition
       },
       {
         path:'roomDetails/:id',
