@@ -30,7 +30,7 @@ const Navbar = () => {
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost gap-5 mt-3 lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="black">
+                                viewBox="0 0 24 24" stroke="white">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4"
                                     d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
@@ -56,9 +56,9 @@ const Navbar = () => {
                                     <li>
                                         <button
                                             onClick={handleSignOut}
-                                            className="btn btn-sm bg-amber-500 text-blue-900 font-bold w-full"
+                                            className="btnUI btn-sm bg-amber-500 text-blue-900 font-bold w-full"
                                         >
-                                            Log Out
+                                            Log Out <span></span>
                                         </button>
                                     </li>
                                 )
@@ -71,7 +71,7 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
                         className="text-2xl font-frieska font-bold text-black tracking-widest ml-2">
-                        A<span className='text-[33px] font-frieska text-white'>ur</span>is
+                        A<span className='text-[33px] font-frieska text-[#fdf7c4]'>ur</span>is
                     </motion.h1>
                 </div>
 
@@ -122,9 +122,9 @@ const Navbar = () => {
                             <div className="hidden lg:flex">
                                 <button
                                     onClick={handleSignOut}
-                                    className="btn bg-amber-500 text-blue-900 font-extrabold"
+                                    className="btnUI bg-amber-500 text-blue-900 font-extrabold"
                                 >
-                                    Log Out
+                                    Log Out <span></span>
                                 </button>
                             </div>
                         )
