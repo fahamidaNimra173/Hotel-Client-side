@@ -95,7 +95,7 @@ const HomeSections = () => {
               Worth Waking Up For
             </h1>
             <img
-              className='h-52 object-cover shadow-2xl rounded-b-md shadow-white dark:shadow-none transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:rotate-2'
+              className='h-52  object-cover shadow-2xl rounded-b-md shadow-white dark:shadow-none '
               src="https://i.ibb.co.com/nsmFRWFh/breakfast-at-caravelle-saigon-5500238-1280.jpg"
               alt=""
             />
@@ -138,12 +138,12 @@ const HomeSections = () => {
       </div>
 
 
-      <div className="bg-[#fdf7c4] flex flex-col md:flex-row items-center justify-center py-16 px-6 md:px-20 gap-10">
+      <div className="bg-[#fdf7c4] dark:bg-[#3b3502]  relative flex flex-col md:flex-row items-center justify-center py-16   px-2 gap-30">
         {/* Left Side Text */}
         <div className="flex-1">
-          <h2 className="text-sm tracking-widest text-gray-700 font-semibold mb-2">WELCOME TO</h2>
-          <h1 className="text-5xl font-bold text-[#7a8155] mb-6">LARANA SPA</h1>
-          <p className="text-gray-700 text-lg leading-relaxed">
+          <h2 className="text-sm tracking-widest text-gray-700 dark:text-white font-semibold mb-2">WELCOME TO</h2>
+          <h1 className="text-5xl font-bold text-[#7a8155] dark:text-[#d57107] mb-6">LARANA SPA</h1>
+          <p className="text-gray-700 dark:text-white text-lg leading-relaxed">
             Indulge in a sanctuary of relaxation and rejuvenation.
             Our spa offers world-class treatments, soothing aromas, and an atmosphere designed
             to refresh your body and calm your mind. From therapeutic massages to rejuvenating
@@ -152,21 +152,7 @@ const HomeSections = () => {
         </div>
 
         {/* Right Side Images */}
-        <div className="flex-1 grid grid-cols-2 gap-4">
-          <div className="overflow-hidden rounded-lg col-span-2 md:col-span-1">
-            <img
-              src="https://i.ibb.co.com/SLWHM3v/spa3.jpg"
-              alt="Spa Room"
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110"
-            />
-          </div>
-          <div className="overflow-hidden rounded-lg">
-            <img
-              src="https://i.ibb.co.com/9mk1062j/spa2.jpg"
-              alt="Spa Lounge"
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110"
-            />
-          </div>
+        <div className='flex-1'>
           <div className="overflow-hidden rounded-lg">
             <img
               src="https://i.ibb.co.com/DDxf5fLn/spa1.jpg"
@@ -174,6 +160,24 @@ const HomeSections = () => {
               className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110"
             />
           </div>
+
+        </div>
+        <div className="absolute top-2/3 md:top-30 md:ml-20 md:flex-col   flex gap-1">
+          <div className="overflow-hidden bg-white py-2 pl-2 object-cover w-full h-36  rounded-lg col-span-2 md:col-span-1">
+            <img
+              src="https://i.ibb.co.com/PZBHhCL6/spa4.jpg"
+              alt="Spa Room"
+              className=" h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            />
+          </div>
+          <div className="overflow-hidden w-full bg-white h-36 rounded-lg">
+            <img
+              src="https://i.ibb.co.com/9mk1062j/spa2.jpg"
+              alt="Spa Lounge"
+              className=" h-full object-cover p-2  transition-transform duration-700 ease-in-out hover:scale-110"
+            />
+          </div>
+          
         </div>
       </div>
 
