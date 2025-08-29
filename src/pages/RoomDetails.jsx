@@ -91,15 +91,15 @@ const RoomDetails = () => {
     return (
         <div >
 
-            <div className='my-9 sm:mx-6 mx-2  text-black p-4 '>
-                <div><img className='rounded-2xl mb-20 shadow-lg shadow-black' src={bannerImage} alt="" /></div>
+            <div className='my-9 sm:mx-6   text-black mx-2 '>
+                <div><img className='max-h-screen w-full rounded-2xl mb-20 shadow-lg shadow-black' src={bannerImage} alt="" /></div>
 
                 <motion.h1
 
                     initial={{ opacity: 0, x: 100, scale: 0 }}
                     whileInView={{ opacity: 1, x: [0, -10], scale: 1 }}
                     transition={{ duration: 1.2 }}
-                    className='md:text-5xl text-3xl md:mx-10 my-9 font-bold fascinate-inline-regular text-amber-700'>{name}</motion.h1>
+                    className='md:text-5xl px-4 text-3xl md:mx-10 my-9 font-bold fascinate-inline-regular text-[#f8952a] dark:text-[#d57107]'>{name}</motion.h1>
 
                 <div className='flex flex-col md:flex-row items-center justify-between gap-5'>
                     <motion.div
@@ -110,15 +110,15 @@ const RoomDetails = () => {
                     </motion.div>
                     <div className='flex-1'>
 
-                        <p className='text-[20px] font-semibold exo-2 text-amber-900'>{description}</p>
-                        <div className='flex fbg-[#C19A6B]lex-col md:flex-row gap-5 flex-wrap justify-between mx-auto items-center'>
-                            <div className='bg-[#C19A6B] text-white px-5 py-9 rounded-4xl text-center my-12'>
+                        <p className='text-[20px] font-semibold exo-2 text-[#f8952a] dark:text-[#d57107]'>{description}</p>
+                        <div className='flex bg-[#fdf7c4] mt-12 py-14 flex-col md:flex-row gap-5 flex-wrap justify-between mx-auto items-center'>
+                            <div className='bg-[#a8cc61] text-white px-5 py-9 rounded-4xl text-center my-12'>
                                 <h4 className='flex items-center gap-2 text-[20px] font-semibold'> <FcMoneyTransfer /> PRICE: {price}</h4>
                             </div>
-                            <div className=' flex  bg-[#C19A6B] text-white px-5 py-9 rounded-4xl text-center'>
+                            <div className=' flex  bg-[#a8cc61] text-white px-5 py-9 rounded-4xl text-center'>
                                 <h4 className='flex items-center gap-2 text-[20px] font-semibold'><FcRating /> RATINGS: {rating}</h4>
                             </div>
-                            <div className='bg-[#C19A6B] text-white px-5 py-9 rounded-4xl text-center'>
+                            <div className='bg-[#a8cc61] text-white px-5 py-9 rounded-4xl text-center'>
                                 <h4 className='flex items-center gap-2 text-[20px] font-semibold'><IoBed /> BED: {bedType}</h4>
                             </div>
                         </div>
@@ -141,11 +141,11 @@ const RoomDetails = () => {
 
 
                 <div className="my-12 w-full max-w-md md:max-w-2xl lg:max-w-5xl bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 p-6 mx-auto">
-                    <h2 className="text-2xl font-semibold text-amber-700 mb-4 text-center">Room Overview</h2>
+                    <h2 className="text-2xl font-semibold text-[#a8cc61] mb-4 text-center">Room Overview</h2>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         <div className="flex items-center gap-3">
-                            <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div className="w-3 h-3 rounded-full bg-[#f8952a]"></div>
                             <div>
                                 <p className="text-gray-700 font-medium">Room Size</p>
                                 <p className="text-sm text-gray-500">{roomSize}</p>
@@ -153,7 +153,7 @@ const RoomDetails = () => {
                         </div>
 
                         <div className="flex items-center gap-3">
-                            <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div className="w-3 h-3 rounded-full bg-[#f8952a]"></div>
                             <div>
                                 <p className="text-gray-700 font-medium">Room Beds</p>
                                 <p className="text-sm text-gray-500">{roomBeds}</p>
@@ -161,7 +161,7 @@ const RoomDetails = () => {
                         </div>
 
                         <div className="flex items-center gap-3">
-                            <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div className="w-3 h-3 rounded-full bg-[#f8952a]"></div>
                             <div>
                                 <p className="text-gray-700 font-medium">Occupancy</p>
                                 <p className="text-sm text-gray-500">{occupancy}</p>
@@ -169,7 +169,7 @@ const RoomDetails = () => {
                         </div>
 
                         <div className="flex items-center gap-3">
-                            <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div className="w-3 h-3 rounded-full bg-[#f8952a]"></div>
                             <div>
                                 <p className="text-gray-700 font-medium">View</p>
                                 <p className="text-sm text-gray-500">{view}</p>
@@ -185,7 +185,7 @@ const RoomDetails = () => {
 
                 <div className=' text-center space-y-2 mt-12'>
 
-                    <div className='bg-blue-100 text-black px-7 py-16 border-2'>
+                    <div className='bg-[#fdf7c4] text-black px-7 py-16 border-2'>
                         {reviews.length > 0 ? (
                             <Swiper
                                 modules={[Autoplay, Pagination]}
@@ -227,7 +227,7 @@ const RoomDetails = () => {
                     <div className="card-actions justify-center my-7">
 
                         {/* You can open the modal using document.getElementById('ID').showModal() method */}
-                        <button className="btn btn-primary" onClick={handleBooking}>Book Now</button>
+                        <button className="btn bg-[#f8952a] text-white  " onClick={handleBooking}>Book Now</button>
 
                         {available === true ?
                             <dialog id="my_modal_4" className="modal modal-bottom sm:modal-middle">
@@ -241,12 +241,12 @@ const RoomDetails = () => {
                                     }
                                     <p className="py-4">Suitable For {occupancy} </p>
                                     <div className='flex mx-auto gap-5 justify-center'>
-                                        <h3 className='bg-pink-400 text-[16px] font-bold rounded-2xl px-12 py-3'>{price} BDT</h3>
-                                        <h3 className='bg-pink-400 text-[16px] font-bold rounded-2xl px-12 py-3'>BED: {bedType}</h3>
+                                        <h3 className='bg-[#a8cc61] text-[16px] font-bold rounded-2xl px-12 py-3'>{price} BDT</h3>
+                                        <h3 className='bg-[#a8cc61] text-[16px] font-bold rounded-2xl px-12 py-3'>BED: {bedType}</h3>
                                     </div>
                                     <h1 className='mt-9 mb-3 '>please give your booking date</h1>
                                     <form onSubmit={handleConfirm} >
-                                        <input type="date" name='date' className="input mb-9 bg-pink-300 text-black" />
+                                        <input type="date" name='date' className="input mb-9 bg-[#a8cc61] text-black" />
 
 
 

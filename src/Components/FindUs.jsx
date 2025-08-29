@@ -1,7 +1,9 @@
-import { Marker } from 'pigeon-maps';
-import React from 'react';
 
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Map, Marker, } from 'pigeon-maps';
 const FindUs = () => {
+     const radissonCoords = [22.3476, 91.8231];
     return (
         <section class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 py-16">
   <div class="max-w-6xl mx-auto px-6">
@@ -32,7 +34,24 @@ const FindUs = () => {
       </div>
 
       <div class="rounded-lg overflow-hidden shadow-lg">
-       <Marker></Marker>
+        <div className='mb-11 mt-20 '>
+                 <motion.h1 
+            initial={{ opacity: 0, x: 100, scale: 0 }}
+            whileInView={{ opacity: 1, x: [0, -10], scale: 1 }}
+            transition={{ duration: 1.2}}
+             className='text-3xl mx-5 md:mx-10 my-9 font-bold fascinate-inline-regular text-amber-700 dark:text-[#fdf7c4]'>Live Hotel Location</motion.h1>
+
+                <Map height={400} defaultCenter={radissonCoords} defaultZoom={15}>
+                    <Marker anchor={radissonCoords}>
+                        <img
+                            src="https://i.ibb.co/nZvbkFK/2355144.jpg"
+                            alt="Radisson Blu Hotel"
+                            width={50}
+                            height={50}
+                        />
+                    </Marker>
+                </Map>
+            </div>
       </div>
     </div>
 

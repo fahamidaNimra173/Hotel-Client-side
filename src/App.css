@@ -2,8 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap');
   .lilita-one-regular {
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
@@ -15,6 +16,13 @@
   font-weight: normal;
   font-style: normal;
 }
+
+.beau {
+  font-family: "Beau Rivage", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .cinzel {
   font-family: "Cinzel Decorative", serif;
   font-weight: 700;
@@ -23,7 +31,7 @@
 .castoro {
   font-family: "Castoro Titling", serif;
  
-  font-style: normal;
+
 }
 
  .fascinate-inline-regular {

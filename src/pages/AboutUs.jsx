@@ -20,38 +20,38 @@ export default function AboutUs() {
 
       {/* Our Story section */}
       <section className="mt-16 max-w-5xl mx-auto space-y-12">
-        <h2 className="text-4xl font-bold mb-8 border-b-4 border-blue-600 inline-block pb-2">
+        <h2 className="text-4xl font-bold mb-8 border-b-4 text-[#a8cc61] inline-block pb-2">
           Our Story
         </h2>
 
         {/* Founding */}
         <div>
-          <h3 className="text-2xl font-semibold mb-3">How It All Began</h3>
-          <p className="text-gray-700 leading-relaxed text-lg">
+          <h3 className="text-2xl font-semibold mb-3 text-[#a8cc61]">How It All Began</h3>
+          <p className="text-gray-700 dark:text-white leading-relaxed text-lg">
             Serenity Stays was founded in 1998 by John Matthews, a visionary with a passion for hospitality and a dream to create a sanctuary for travelers seeking comfort and elegance. Starting as a small boutique hotel nestled in the heart of the city, it quickly earned a reputation for personalized service and attention to detail.
           </p>
         </div>
 
         {/* Growth */}
         <div>
-          <h3 className="text-2xl font-semibold mb-3">Our Growth Journey</h3>
-          <p className="text-gray-700 leading-relaxed text-lg">
+          <h3 className="text-2xl font-semibold text-[#a8cc61] mb-3">Our Growth Journey</h3>
+          <p className="text-gray-700 dark:text-white leading-relaxed text-lg">
             Over the past two decades, Serenity Stays has expanded its footprint, evolving into a premier hotel known for blending modern luxury with authentic warmth. Our team has grown to over 150 dedicated professionals, all committed to ensuring each guest feels valued and cared for throughout their stay.
           </p>
         </div>
 
         {/* Services */}
         <div>
-          <h3 className="text-2xl font-semibold mb-3">What We Offer</h3>
-          <p className="text-gray-700 leading-relaxed text-lg">
+          <h3 className="text-2xl font-semibold mb-3 text-[#a8cc61]">What We Offer</h3>
+          <p className="text-gray-700 leading-relaxed text-lg dark:text-white">
             From indulgent spa treatments and gourmet dining to 24/7 concierge services and serene infinity pools, we offer a comprehensive suite of amenities designed to elevate your experience. Every detail is thoughtfully crafted to exceed expectations and provide a seamless blend of relaxation and convenience.
           </p>
         </div>
 
         {/* Values & Trust */}
         <div>
-          <h3 className="text-2xl font-semibold mb-3">Why Trust Us</h3>
-          <p className="text-gray-700 leading-relaxed text-lg">
+          <h3 className="text-2xl font-semibold mb-3 text-[#a8cc61]">Why Trust Us</h3>
+          <p className="text-gray-700 leading-relaxed dark:text-white text-lg">
             At Serenity Stays, integrity, transparency, and genuine care are the foundation of everything we do. Our commitment to continuous improvement and environmental responsibility reflects our respect for our guests, community, and planet. Thousands of loyal guests return year after year, trusting us to deliver exceptional hospitality every time.
           </p>
         </div>

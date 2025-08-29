@@ -27,7 +27,7 @@ const AllRooms = () => {
              className='text-3xl text-center my-9 font-bold fascinate-inline-regular text-amber-700'>~~All Rooms~~</motion.h1>
 
             <div className='mb-4 mx-4 md:mx-12 '>
-                <label className='font-bold text-[20px] lilita-one-regular my-15 '>Sort by:</label>
+                <label className='font-bold text-[20px] lilita-one-regular my-15 dark:text-white '>Sort by:</label>
                 <select onChange={(e) => setSort(e.target.value)} className='ml-2 my-15 border text-black px-2 py-1 bg-blue-100 rounded'>
                     <option value="">Default</option>
                     <option value="price_asc">Price Low to High</option>

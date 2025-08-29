@@ -87,13 +87,13 @@ const Login = () => {
                         <img className='lg:hidden md:block hidden' src="https://i.ibb.co/sYQpgs0/Screenshot-2025-05-21-191254.pngs" alt="" />
                         
                     </div>
-                <form onSubmit={handleLogIn}  autoComplete="off" className="text-center pt-6 md:pt-15 text-white font-medium text-[18px]  shadow-blue-500 rounded-b-lg rounded-t-md shadow-2xl  bg-linear-to-b from-pink-200 to-blue-400 opacity-100 border-base-300 w-full mx-auto  -z-0   p-4">
-                <legend className=" text-center text-blue-400 text-shadow-2xs text-shadow-black text-3xl eczar">Login & Go Green</legend>
+                <form onSubmit={handleLogIn}  autoComplete="off" className="text-center pt-6 md:pt-15 text-white font-medium text-[18px]  shadow-[#bad682] rounded-b-lg rounded-t-md shadow-2xl   bg-linear-to-b  from-[#fdf7c4] to-[#bad682] opacity-100 border-base-300 w-full mx-auto  -z-0   p-4">
+                <legend className=" text-center text-amber-500 text-shadow-2xs text-shadow-black text-3xl eczar">Login & Go Green</legend>
 
-                <label className="label text-[22px] mt-16 text-blue-500 text-shadow-2xs text-shadow-black mb-2.5 ">Email</label><br/>
+                <label className="label text-[22px] mt-16 text-amber-500 text-shadow-2xs text-shadow-black mb-2.5 ">Email</label><br/>
                 <input type="email" name='email' className="border-b-2 text-black  border-b-blue-500 mb-2" ref={emailref}  autoComplete="off" placeholder="Email" required /><br/>
 
-                <label className="label text-pink-500 text-shadow-2xs text-shadow-black mb-2.5  ">Password</label><br/>
+                <label className="label text-amber-500 text-shadow-2xs text-shadow-black mb-2.5  ">Password</label><br/>
                 <input type="password" className="border-b-2 text-black  border-b-blue-500 mb-2" name='password' autoComplete="new-password" placeholder="Password" required  /><br/>
                 <div onClick={handleForget} >
                     <a  className='text-white text-[19px] underline'>Forget Your Password?</a>
@@ -102,8 +102,8 @@ const Login = () => {
                 
                 {/* <p className='text-red-500 text-[19px] p-6'>{errors}</p> */}
                 
-                <button className="btn  text-white chicle font-bold bg-purple-600 text-[20px] -tracking-tighter shadow-2xs mt-4 mb-4">Login</button><br/>
-                <button id='btn-sign' className="btn text-wrap text-shadow-2xs text-shadow-gray-700 shadow-2xl  bg-purple-600 mb-13 text-white chicle font-bold text-[20px] -tracking-tighter  " onClick={handleLoginByGoogle} ><img className='w-6 bg-yellow-50 rounded-full' src="https://i.ibb.co.com/0yympJ9z/pngwing-com.png" alt="" />Log In With Google</button>
+                <button className="btn  text-white chicle font-bold bg-amber-500 text-[20px] -tracking-tighter shadow-2xs mt-4 mb-4">Login</button><br/>
+                <button id='btn-sign' className="btn text-wrap text-shadow-2xs text-shadow-gray-700 shadow-2xl  bg-amber-500 mb-13 text-white chicle font-bold text-[20px] -tracking-tighter  " onClick={handleLoginByGoogle} ><img className='w-6 bg-yellow-50 rounded-full' src="https://i.ibb.co.com/0yympJ9z/pngwing-com.png" alt="" />Log In With Google</button>
                 <p className='overpass p-5 text-white'>Don't Have Any Account? <NavLink to='/register' className='text-blue-500'>Register</NavLink></p>
                 </form>
                 

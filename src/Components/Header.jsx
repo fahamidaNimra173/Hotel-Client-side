@@ -21,9 +21,10 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="flex w-full items-center fixed top-0 z-100 bg-[#a8cc61]
-                shadow-black shadow-inner dark:bg-[#7a9e33]
-                py-6 md:px-6 px-2 lg:px-28 lobster text-black">
+           <div className="flex w-full items-center fixed top-0 z-50 
+                bg-white/10 backdrop-blur-md castoro
+                shadow-black shadow-inner text-[15px]
+                py-4 md:px-6 px-2 lg:px-10 lobster text-white">
 
                 {/* Left: Logo + Mobile Menu */}
                 <div className="flex items-center">
@@ -37,12 +38,13 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-blue-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-black font-medium text-[15px]">
+                            className="menu text-white menu-sm dropdown-content bg-[#fdf7c4] rounded-box z-1 mt-3 w-52 p-2 shadow castoro font-medium text-[15px]">
                             <NavLink to='/'>Home</NavLink>
                             <NavLink to='/allrooms'>All Rooms</NavLink>
                             <NavLink to='/mybookings'>My Booking</NavLink>
                             <NavLink to='/aboutus'>About Us</NavLink>
-                            <NavLink to='/'>Find Us</NavLink>
+                            <NavLink to='/findus'>Find Us</NavLink>
+                            <NavLink to='/termsandcondition'>Terms and Conditions</NavLink>
                             {
                                 !user && (
                                     <>
@@ -70,19 +72,20 @@ const Navbar = () => {
                         initial={{ opacity: 0, y: -20, scale: 0.9 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="text-2xl font-frieska font-bold text-black tracking-widest ml-2">
-                        A<span className='text-[33px] font-frieska text-[#fdf7c4]'>ur</span>is
+                        className="text-2xl font-frieska font-bold text-white tracking-widest ml-2">
+                        A<span className='text-[33px] font-frieska'>ur</span>is
                     </motion.h1>
                 </div>
 
                 {/* Center: Nav Links */}
                 <div className="hidden lg:flex flex-1 justify-center">
-                    <ul className="flex text-[20px] space-x-6">
+                    <ul className="flex text-[15px] space-x-6">
                         <NavLink to='/'>Home</NavLink>
                         <NavLink to='/allrooms'>All Rooms</NavLink>
                         <NavLink to='/mybookings'>My Booking</NavLink>
                         <NavLink to='/aboutus'>About Us</NavLink>
-                        <NavLink to='/'>Find Us</NavLink>
+                        <NavLink to='/findus'>Find Us</NavLink>
+                        <NavLink to='/termsandcondition'>Terms and Conditions</NavLink>
                     </ul>
                 </div>
 

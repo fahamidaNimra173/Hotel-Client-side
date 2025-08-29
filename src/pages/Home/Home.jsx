@@ -1,18 +1,19 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import HotelCard from '../../Components/HotelCard';
-import { Map, Marker, } from 'pigeon-maps';
-import { Link } from 'react-router';
-import { Carousel } from 'react-responsive-carousel';
-import { motion } from "framer-motion";
+// import { Map, Marker, } from 'pigeon-maps';
+// import { Link } from 'react-router';
+// import { Carousel } from 'react-responsive-carousel';
+ import { motion } from "framer-motion";
+ import '../../App.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 // import Modal from '../../Components/Modal';
 import HomeSections from '../../Components/Homesections';
 
 const Home = () => {
-    
+
     const [hotels, setHotels] = useState([]);
-    const radissonCoords = [22.3476, 91.8231];
+    // const radissonCoords = [22.3476, 91.8231];
 
     useEffect(() => {
         axios.get('https://hotel-server-side-mu.vercel.app/topratedhotels').then(res => {
@@ -27,79 +28,72 @@ const Home = () => {
     return (
         <div >
             {/* <Modal></Modal> */}
-    <Carousel
-      showThumbs={false}
-      showStatus={false}
-      infiniteLoop
-      autoPlay
-      interval={4000}
-      showArrows
-      stopOnHover
-      swipeable
-      emulateTouch
-      dynamicHeight={false}
-    >
-      <div className="relative h-[500px] w-full">
-                <img
-                    src="https://i.ibb.co.com/35bKNW9Y/rsz-view-romantic-castle-bedroom.jpg"
-                    alt="Banner Background"
-                    className="h-full w-full object-cover brightness-40 "
-                />
 
-                
-                <div className="absolute bottom-0  w-full lg:right-30 lg:w-[800px] text-center z-10 bg-white/10 backdrop-blur-md rounded-lg p-4">
-                    <h1 className="text-white text-4xl font-bold lilita-one-regular">Welcome to Your Luxury Stay</h1>
-                    <p className="text-white text-[20px] font-medium t mt-2">Experience comfort, elegance, and relaxation</p>
-                    <Link to={'/allrooms'}> <button className='my-9 rounded-3xl font-bold bg-black border-none px-9 py-4 text-white'>Show All Rooms</button></Link>
+            <div className="relative flex">
+
+                <div className="flex flex-1/3">
+                    <div className="lg:flex-1">
+                        <img
+                            className="h-[650px] w-full object-cover opacity-80"
+                            src="https://i.ibb.co.com/rGK87Q2V/banner1.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div>
+                        <img
+                            className="h-[650px] w-full object-cover opacity-80"
+                            src="https://i.ibb.co.com/nsGrg9sM/banner2.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div className="lg:flex-1">
+                        <img
+                            className="h-[650px] w-full object-cover opacity-80"
+                            src="https://i.ibb.co.com/TM6S9QJB/banner3.jpg"
+                            alt=""
+                        />
+                    </div>
                 </div>
-            </div>
-       <div className="relative h-[500px] w-full">
-                <img
-                    src="https://i.ibb.co.com/5X5q2LQK/rsz-silhouette-palm-tree-with-umbrella.jpg"
-                    alt="Banner Background"
-                    className="h-full w-full object-cover brightness-40 "
-                />
-                
-                <div className="absolute bottom-0  w-full lg:right-30 lg:w-[800px] text-center z-10 bg-white/10 backdrop-blur-md rounded-lg p-4">
-                    <h1 className="text-white text-4xl font-bold lilita-one-regular">Stay in Style and Comfort</h1>
-                    <p className="text-white text-[20px] font-medium t mt-2">Luxury living tailored just for you</p>
-                   <Link to={'/allrooms'}> <button className='my-9 rounded-3xl font-bold bg-black border-none px-9 py-4 text-white'>Show All Rooms</button></Link>
-                </div>
-            </div>
-      <div className="relative h-[500px] w-full">
-                <img
-                    src="https://i.ibb.co.com/WWy25NTS/rsz-long-corridor-showcase.jpg"
-                    alt="Banner Background"
-                    className="h-full w-full object-cover brightness-40 "
-                />
-                <div className="absolute inset-0   bg-opacity-100"></div>
-                <div className="absolute top-4 left-6 z-10">
+
+                <div className="flex-1">
                     <img
-                        src="https://i.ibb.co/tMx5YDRR/346743-PBCAER-386.jpg"
-                        alt="logo"
-                        className="h-19 w-30"
+                        className="h-[650px] w-full object-cover opacity-80"
+                        src="https://i.ibb.co.com/Y7SsyKYV/banner4.jpg"
+                        alt=""
                     />
                 </div>
-                <div className="absolute bottom-0  w-full lg:right-30 lg:w-[800px] text-center z-10 bg-white/10 backdrop-blur-md rounded-lg p-4">
-                    <h1 className="text-white text-4xl font-bold lilita-one-regular">Discover Unmatched Serenity</h1>
-                    <p className="text-white text-[20px] font-medium t mt-2">Your perfect getaway starts right here</p>
-                    <Link to={'/allrooms'}> <button className='my-9 rounded-3xl font-bold bg-black border-none px-9 py-4 text-white'>Show All Rooms</button></Link>
+
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+
+
+                <div className="absolute inset-0 pt-25 flex flex-col justify-center bg-gradient-to-r from-black/80 to-transparent items-start px-10 lg:max-w-2/5">
+                    <h1 className="lg:text-center text-5xl md:text-6xl beau  font-bold text-white drop-shadow-lg">
+                        Book  Moments, Not Just Rooms
+                    </h1>
+                    <p className="mt-7 castoro text-center text-lg  text-white max-w-xl drop-shadow-md">
+                        Book your dream stay in seconds — comfort, luxury, and the best deals await you
+                    </p>
                 </div>
             </div>
-    </Carousel>
-          
-            
-
-
-            
 
 
 
-            <motion.h1 
-            initial={{ opacity: 0, x: 20, scale: 0 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 1.2}}
-             className='text-3xl text-center my-9 font-bold fascinate-inline-regular text-amber-700'>Top Rated Rooms</motion.h1>
+
+
+           
+
+
+
+
+
+
+
+            <motion.h1
+                initial={{ opacity: 0, x: 20, scale: 0 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ duration: 1.2 }}
+                className='text-3xl mt-30 text-center my-9 font-bold fascinate-inline-regular text-amber-700'>Top Rated Rooms</motion.h1>
             {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 lg:gap-5 mx-4'>
                 {
 
@@ -110,7 +104,8 @@ const Home = () => {
             <HomeSections></HomeSections>
 
 
-        
+
+
         </div>
     );
 };
