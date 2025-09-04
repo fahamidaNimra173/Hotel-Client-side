@@ -2,7 +2,7 @@
 
 <div style="text-align: center;">
   <img 
-    src="https://i.ibb.co/1f0cvwq6/Screenshot-2025-08-08-183015.png" 
+    src="https://i.ibb.co.com/1f0cvwq6/Screenshot-2025-08-08-183015.png" 
     alt="Screenshot" 
     style="width: 100%; max-width: 600px;" 
   />
