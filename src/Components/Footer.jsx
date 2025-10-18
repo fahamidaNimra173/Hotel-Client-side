@@ -70,13 +70,13 @@
 const Footer = () => {
     return (
         <div className='mt-20'>
-            <footer class="bg-[#a8cc61] dark:bg-[#7a9e33] text-gray-900 dark:text-white py-10">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+            <footer class="bg-[#ac6f26] eb dark:bg-[#9c6624] text-gray-900  dark:text-white py-10">
+  <div class="md:px-6 px-2 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
     
     
     <div>
-      <h2 class="text-xl font-semibold mb-3">Contact Us</h2>
-      <p class="font-medium">AurIS Hotel</p>
+      <h2 class="text-xl font-semibold castoro mb-3">Contact Us</h2>
+      <p class="font-bold castoro tracking-widest"><span className="beau text-[#ffbd59] font-extrabold text-3xl">A</span>urI<span className="beau font-extrabold text-[#ffbd59] text-3xl">S</span>  Hotel</p>
       <p>Email: <a href="mailto:fahmidanimra@gmail.com" class="hover:underline">fahmidanimra@gmail.com</a></p>
       <p>Phone: <a href="tel:01569029731" class="hover:underline">01569029731</a></p>
       
@@ -133,7 +133,7 @@ const Footer = () => {
     
  
     <div class="flex justify-center items-center">
-      <img src="https://i.ibb.co.com/j9j9nV96/Blue-Building-Apartment-Real-Estate-Logo-1.png" alt="Hotel Logo" class="rounded-lg shadow-lg"/>
+      <img src="https://i.ibb.co.com/LXMhLCHp/Blue-Building-Apartment-Real-Estate-Logo-3.png" alt="Hotel Logo" class="rounded-lg shadow-lg"/>
     </div>
   </div>
   

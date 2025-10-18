@@ -9,7 +9,7 @@ const HotelCard = ({ hotel }) => {
   return (
     <>
       {/* Large Device Version */}
-      <div className="hidden md:block relative w-full max-w-md overflow-hidden rounded-2xl shadow-lg group mx-auto">
+      <div className="hidden eb md:block relative w-full max-w-md overflow-hidden rounded-2xl shadow-lg group mx-auto">
         {/* Image */}
         <img
           src={image}
@@ -32,24 +32,37 @@ const HotelCard = ({ hotel }) => {
           whileHover={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="absolute inset-0 bg-gradient-to-r from-yellow-400/30 via-yellow-200/20 to-transparent backdrop-blur-sm 
-          flex flex-col justify-center items-center text-center px-6 py-8 opacity-0 group-hover:opacity-100 transition duration-500"
+            px-6 py-8 opacity-0 group-hover:opacity-100 transition duration-500"
         >
-          <h2 className="text-xl font-bold text-white">{name}</h2>
-          <p className="text-sm mt-2 text-black line-clamp-3">{description}</p>
-          <span className="text-lg font-semibold mt-2 text-white">BDT-{price}</span>
-          <div className="mt-4 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded shadow-md">
-            <Link to={`/roomDetails/${roomId}`}>Learn More</Link>
+          <h2 className="text-4xl mt-10 mb-25 text-center font-bold text-white">{name}</h2>
+          <div className='flex  justify-center items-center gap-2'>
+            <div className='flex-1'>
+
+              <p className="text-lg mt-2 text-black line-clamp-3">{description}</p>
+            </div>
+            <div className='text-center'>
+              <span className="text-lg font-semibold mt-2 text-white">BDT-{price}</span>
+              <div>
+                <button className="btn1 mt-10">
+                  <Link to={`/roomDetails/${roomId}`}>Learn More</Link>
+                </button>
+              </div>
+
+            </div>
           </div>
+
+
+
         </motion.div>
       </div>
 
       {/* Mobile Version */}
-      <div className="block md:hidden bg-white shadow-lg rounded-2xl overflow-hidden border border-gray-200">
+      <div className="block eb md:hidden bg-white shadow-lg rounded-2xl overflow-hidden border border-gray-200">
         <img src={image} alt={name} className="w-full h-60 object-cover" />
 
         <div className="p-4">
-          <h2 className="text-lg font-bold text-black">{name}</h2>
-          <p className="text-sm text-gray-700 mt-1">{description.slice(0, 60)}...</p>
+          <h2 className="text-2xl font-bold text-black">{name}</h2>
+          <p className="text-[20px] text-gray-700 mt-1">{description.slice(0, 60)}...</p>
           <span className="block mt-2 text-[#a8cc61] font-semibold text-lg">
             BDT-{price}
           </span>
@@ -67,9 +80,9 @@ const HotelCard = ({ hotel }) => {
           </div>
 
           {/* Learn More */}
-          <div className="mt-4 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded shadow-md text-center">
-            <Link to={`/roomDetails/${roomId}`}>Learn More</Link>
-          </div>
+          <button className="mt-4 btn1 w-full font-bold">
+            <Link to={`/roomDetails/${roomId}`}><span className='font-bold text-[12px]'>Learn More</span> </Link>
+          </button>
         </div>
       </div>
     </>
