@@ -62,14 +62,19 @@ const HomeSections = () => {
 
       {/* Banner */}
       <div
-        className="relative h-[500px] md:h-[600px] bg-cover bg-center flex flex-col w-full justify-end my-30 md:my-50"
+        className="relative z-5  h-[500px] md:h-[600px] bg-cover bg-center flex flex-col w-full justify-end my-30 md:my-50"
         style={{
           backgroundImage:
             "url('https://i.ibb.co.com/Xxm0Bn7s/Blue-and-White-Simple-Hotel-Promotion-Presentation-2.jpg')",
         }}
       >
-        <div className="absolute inset-0 dark:bg-black/40" />
 
+        <div className="absolute inset-0 dark:bg-black/40" />
+        <div className="absolute hidden lg:block -bottom-15 overflow-hidden left-23  w-72 -z-5 h-72 bg-[#f6672a] rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute hidden lg:block -bottom-15 overflow-hidden left-96  w-72 -z-5 h-72 bg-[#f6672a] rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute hidden lg:block -bottom-15 overflow-hidden left-63  w-72 -z-5 h-72 bg-[#f6672a] rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute hidden lg:block -bottom-15 overflow-hidden right-96  w-72 -z-5 h-72 bg-[#f6672a] rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute hidden lg:block -bottom-15 overflow-hidden right-63  w-72 -z-5 h-72 bg-[#f6672a] rounded-full blur-3xl pointer-events-none"></div>
         {/* Heading */}
         <motion.h1
           className="castoro shadow-2xl shadow-black text-white text-3xl md:text-5xl font-bold py-6 px-2 md:p-12 absolute mt-45 sm:mt-35 top-0 md:left-15 right-0 z-10"
@@ -92,6 +97,7 @@ const HomeSections = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
+
             <img
               src="https://i.ibb.co.com/5hJhxkLm/Blue-Building-Apartment-Real-Estate-Logo-2-removebg-preview.png"
               alt="Luxury & Comfort Shape"
@@ -198,7 +204,7 @@ const HomeSections = () => {
 
 
       {/* What Makes Us Different */}
-      <div className="mb-30 md:mb-50 mt-90">
+      <div className="mb-30 md:mb-50 mt-30 md:mt-90">
         <h1 className="cinzel text-[#ac6f26] castoro p-2 dark:text-[#ad7026] text-4xl text-center mb-20 font-bold">
           What Makes Us Different
         </h1>
@@ -239,8 +245,11 @@ const HomeSections = () => {
 
 
       {/* Breakfast Section */}
-      <div className="md:flex bg-[#28140c] md:flex-row  max-h-min gap-3 flex-col  mb-30">
+      <div className="md:flex overflow-hidden relative bg-[#28140c] z-5 md:flex-row  max-h-min gap-3 flex-col  mb-30">
         {/* Left Section with Black Background */}
+        <div className="absolute top-10 overflow-hidden -left-30 md:left-10  w-96 -z-5 h-96 bg-[#4f2615] rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-70 md:bottom-0 overflow-hidden -left-20  md:left-8 w-96 -z-5 h-96 bg-[#4f2615] rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 overflow-hidden lg:block lg:left-40 hidden w-96 -z-5 h-96 bg-[#4f2615] rounded-full blur-3xl pointer-events-none"></div>
         <div className="flex-1 py-10 md:py-20 px-2 md:px-10 lg:px-20 relative  rounded-2xl p-4">
           <div className="flex flex-col mt-15 group">
             <h1 className="castoro font-bold md:text-right text-center md:px-10 mb-20 md:mb-30 text-4xl text-[#b77729]">
@@ -353,7 +362,9 @@ const HomeSections = () => {
       </div> */}
 
       {/* Spa Section */}
-      <div className="bg-[#28140c] px-6 md:px-10 dark:bg-[#28140c] relative flex flex-col md:flex-row items-center justify-center py-16  gap-10 mb-30">
+      <div className="bg-[#28140c] overflow-hidden z-5 px-6 md:px-10 dark:bg-[#28140c] relative flex flex-col md:flex-row items-center justify-center py-16  gap-10 mb-30">
+        <div className="absolute top-0 overflow-hidden -left-25 md:left-8 w-96 -z-5 h-96 bg-[#4f2615] rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 overflow-hidden left-20 md:left-8 w-96 -z-5 h-96 bg-[#4f2615] rounded-full blur-3xl pointer-events-none"></div>
         <div className="flex-1">
           <h1 className="md:text-5xl text-4xl text-center md:text-left castoro font-bold text-[#ffbd59] dark:text-[#ffbd59] text-wrap mb-6">
             Larana Spa — Relaxation Right Here at Our Hotel

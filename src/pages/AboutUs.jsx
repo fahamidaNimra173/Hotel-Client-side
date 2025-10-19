@@ -2,9 +2,11 @@ import React from "react";
 
 export default function AboutUs() {
   return (
-    <div className="md:my-5  lg:px-28">
+    <div className="md:my-5 overflow-hidden  lg:px-28">
+      <div className="absolute top-70 overflow-hidden -left-20 md:left-10 w-96 h-96 md:bg-[#ffbd59]/30 bg-[#ffbd59]/15 rounded-full blur-3xl pointer-events-none"></div>
+            
       {/* Banner with image */}
-      <div className="relative pt-20 md:h-[600px] rounded-lg overflow-hidden shadow-lg">
+      <div className="relative overflow-x-hidden pt-20 md:h-[600px] rounded-lg overflow-hidden shadow-lg">
         <img
           src="https://i.ibb.co/LdCmQ309/Blue-and-White-Simple-Hotel-Promotion-Presentation.jpg"
           alt="Hotel Banner"
@@ -23,11 +25,11 @@ export default function AboutUs() {
 
 
 
-      <section className="mt-16 px-4 md:px-8 lg:px-16">
+      <section className="mt-16 overflow-hidden px-4 md:px-8 lg:px-16">
         {/* Section Header */}
-        <div className="max-w-7xl mx-auto mb-16">
-          <div className="relative inline-block">
-            <h2 className="text-5xl md:text-6xl font-bold text-[#28140c] dark:text-[#28140c] relative z-10">
+        <div className="max-w-7xl o mx-auto mb-16">
+          <div className="relative  inline-block">
+            <h2 className="text-5xl castoro md:text-6xl font-bold text-[#28140c] dark:text-[#28140c] relative z-10">
               Our Story
             </h2>
             <div className="absolute -bottom-2 left-0 w-32 h-2 bg-[#ffbd59]"></div>
@@ -39,7 +41,8 @@ export default function AboutUs() {
         <div className="max-w-7xl mx-auto mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Image Mosaic */}
-            <div className="order-2 lg:order-1 grid grid-cols-6 grid-rows-6 gap-3 h-[400px] md:h-[500px]">
+            <div className="order-2 relative lg:order-1 z-5 grid grid-cols-6 grid-rows-6 gap-3 h-[400px] md:h-[500px]">
+              <div className="absolute top-20 overflow-hidden right-10 w-96 border-2 h-96 bg-[#ffbd59]/70 rounded-full blur-3xl -z-5 pointer-events-none"></div>
               <div className="col-span-4 row-span-4 relative overflow-hidden rounded-2xl shadow-2xl group">
                 <img
                   src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800"
@@ -72,15 +75,17 @@ export default function AboutUs() {
             </div>
 
             {/* Content */}
-            <div className="order-1 lg:order-2 space-y-6">
+            <div className="order-1 relative lg:order-2 z-5 space-y-6">
+              <div className="absolute top-30 right-10 w-96 border-2 h-96 bg-[#ffbd59]/20 rounded-full blur-3xl -z-5 pointer-events-none"></div>
+            
               <div className="inline-block bg-[#ffbd59] px-4 py-2 rounded-full">
                 <span className="text-[#28140c] font-bold text-sm tracking-wider uppercase">Est. 2025</span>
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-[#28140c] dark:text-[#28140c]">
+              <h3 className="text-3xl castoro md:text-4xl font-bold text-[#28140c] dark:text-[#28140c]">
                 How It All Began
               </h3>
               <div className="w-16 h-1 bg-[#ffbd59]"></div>
-              <p className="text-[#28140c] dark:text-[#28140c] leading-relaxed text-lg">
+              <p className="text-[#28140c] eb text-[21px] dark:text-[#28140c] leading-relaxed ">
                 AurIs was founded in 2025 with a vision to revolutionize hotel booking experiences. We started as a passionate team dedicated to connecting travelers with their perfect accommodations. Our platform quickly gained recognition for its user-friendly interface, transparent pricing, and commitment to making hotel booking seamless and enjoyable for everyone.
               </p>
             </div>
@@ -91,15 +96,16 @@ export default function AboutUs() {
         <div className="max-w-7xl mx-auto mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Content */}
-            <div className="space-y-6">
+            <div className="space-y-6 z-5 relative">
+              <div className="absolute top-30 -left-5 w-96 border-2 h-96 bg-[#ffbd59]/20 rounded-full blur-3xl -z-5 pointer-events-none"></div>
               <div className="inline-block bg-[#28140c] px-4 py-2 rounded-full">
                 <span className="text-[#ffbd59] font-bold text-sm tracking-wider uppercase">Growing Fast</span>
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-[#28140c] dark:text-[#28140c]">
+              <h3 className="text-3xl castoro md:text-4xl font-bold text-[#28140c] dark:text-[#28140c]">
                 Our Growth Journey
               </h3>
               <div className="w-16 h-1 bg-[#ffbd59]"></div>
-              <p className="text-[#28140c] dark:text-[#28140c] leading-relaxed text-lg">
+              <p className="text-[#28140c] eb text-[21px] dark:text-[#28140c] leading-relaxed text-lg">
                 Since our launch, AurIs has rapidly expanded its network of partner hotels and satisfied customers. Our innovative approach to hotel booking has attracted thousands of travelers who trust us to find their ideal stays. We've built a platform that combines cutting-edge technology with personalized service to deliver exceptional booking experiences.
               </p>
               <div className="flex gap-8 pt-4">
@@ -184,15 +190,16 @@ export default function AboutUs() {
               </div>
 
               {/* Content */}
-              <div className="lg:col-span-3 p-8 md:p-12 flex flex-col justify-center">
+              <div className="lg:col-span-3 relative z-5 p-8 md:p-12 flex flex-col justify-center">
                 <div className="inline-block bg-[#ffbd59] px-4 py-2 rounded-full w-fit mb-6">
                   <span className="text-[#28140c] font-bold text-sm tracking-wider uppercase">Platform Features</span>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                <div className="absolute bottom-20 left-0 w-72 h-64 bg-[#532716] rounded-full -z-5 blur-3xl"></div>
+                <h3 className="text-3xl beau tracking-widest md:text-4xl font-bold text-white mb-6">
                   What We Offer
                 </h3>
                 <div className="w-16 h-1 bg-[#ffbd59] mb-6"></div>
-                <p className="text-white leading-relaxed text-lg">
+                <p className="text-white eb text-[21px] leading-relaxed text-lg">
                   From instant booking confirmations and secure payment processing to detailed hotel reviews and 24/7 customer support, AurIs offers everything you need for a perfect hotel booking experience. Our platform is designed with you in mind, providing transparent pricing, easy comparison tools, and exclusive deals that make finding your ideal accommodation effortless.
                 </p>
               </div>
@@ -209,11 +216,11 @@ export default function AboutUs() {
                 <div className="inline-block bg-[#28140c] px-4 py-2 rounded-full w-fit mb-6">
                   <span className="text-[#ffbd59] font-bold text-sm tracking-wider uppercase">Our Promise</span>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-[#28140c] mb-6">
+                <h3 className="text-3xl castoro md:text-4xl font-bold text-[#28140c] mb-6">
                   Why Trust Us
                 </h3>
                 <div className="w-16 h-1 bg-[#28140c] mb-6"></div>
-                <p className="text-[#28140c] leading-relaxed text-lg mb-8">
+                <p className="text-[#28140c] eb text-[21px] leading-relaxed text-lg mb-8">
                   At AurIs, transparency, security, and customer satisfaction are at the heart of everything we do. We partner only with verified hotels, ensure secure transactions, and provide honest reviews from real travelers. Our commitment to innovation and user experience has made us a trusted name in hotel booking, with thousands of satisfied customers who return to us for every journey.
                 </p>
 

@@ -1,23 +1,170 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import HotelCard from '../../Components/HotelCard';
-// import { Map, Marker, } from 'pigeon-maps';
-// import { Link } from 'react-router';
-// import { Carousel } from 'react-responsive-carousel';
- import { motion } from "framer-motion";
- import '../../App.css'
+import { motion, AnimatePresence } from "framer-motion";
+import '../../App.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-// import Modal from '../../Components/Modal';
 import HomeSections from '../../Components/Homesections';
+
+// Hotel Slider Component
+const HotelSlider = ({ hotels }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  // Responsive cards per view
+  const getCardsPerView = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth >= 1024) return 4; // lg
+      if (window.innerWidth >= 768) return 2;  // md
+      return 1; // sm
+    }
+    return 4;
+  };
+
+  const [cardsPerView, setCardsPerView] = useState(getCardsPerView());
+
+  useEffect(() => {
+    const handleResize = () => {
+      setCardsPerView(getCardsPerView());
+      setCurrentIndex(0);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const totalSlides = Math.ceil(hotels.length / cardsPerView);
+  
+  const nextSlide = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  const goToSlide = (index) => {
+    setDirection(index > currentIndex ? 1 : -1);
+    setCurrentIndex(index);
+  };
+
+  const getCurrentCards = () => {
+    const start = currentIndex * cardsPerView;
+    const end = start + cardsPerView;
+    return hotels.slice(start, end);
+  };
+
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0
+    }),
+    center: {
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction) => ({
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0
+    })
+  };
+
+  return (
+    <div className="relative w-full px-4  mx-6 sm:px-10  py-8">
+      {/* Slider Container */}
+      <div className="relative overflow-hidden">
+        <AnimatePresence initial={false} custom={direction} mode="wait">
+          <motion.div
+            key={currentIndex}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 }
+            }}
+            className={`grid gap-2.5 lg:gap-5 ${
+              cardsPerView === 4 ? 'grid-cols-4' :
+              cardsPerView === 2 ? 'grid-cols-2' :
+              'grid-cols-1'
+            }`}
+          >
+            {getCurrentCards().map((hotel) => (
+              <HotelCard key={hotel.roomId} hotel={hotel} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Previous Button */}
+      {currentIndex > 0 && (
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={prevSlide}
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-[#ac6f26] text-white p-4 rounded-full shadow-xl hover:bg-[#8b5a1f] transition-all z-10"
+          aria-label="Previous slide"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </motion.button>
+      )}
+
+      {/* Next Button */}
+      {currentIndex < totalSlides - 1 && (
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={nextSlide}
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-[#ac6f26] text-white p-4 rounded-full shadow-xl hover:bg-[#8b5a1f] transition-all z-10"
+          aria-label="Next slide"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </motion.button>
+      )}
+
+      {/* Dots Navigation */}
+      <div className="flex justify-center gap-2 mt-8">
+        {Array.from({ length: totalSlides }).map((_, index) => (
+          <motion.button
+            key={index}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => goToSlide(index)}
+            className={`transition-all rounded-full ${
+              index === currentIndex
+                ? 'bg-[#ac6f26] w-12 h-3'
+                : 'bg-[#ac6f26]/30 w-3 h-3 hover:bg-[#ac6f26]/50'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Slide Counter */}
+      <div className="text-center mt-4">
+        <span className="text-[#ac6f26] font-semibold castoro">
+          {currentIndex + 1} / {totalSlides}
+        </span>
+      </div>
+    </div>
+  );
+};
 
 const Home = () => {
 
     const [hotels, setHotels] = useState([]);
-    // const radissonCoords = [22.3476, 91.8231];
 
     useEffect(() => {
         axios.get('https://hotel-server-side-mu.vercel.app/topratedhotels').then(res => {
-            const sliceData = res.data.slice(0, 6)
+            const sliceData = res.data.slice(0, 8)
             setHotels(sliceData)
         }).catch(error => {
             console.log(error)
@@ -79,35 +226,21 @@ const Home = () => {
                 </div>
             </div>
 
-
-
-
-
-           
-
-
-
-
-
-
-
             <motion.h1
                 initial={{ opacity: 0, x: 20, scale: 0 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1.2 }}
-                className='text-5xl castoro   mt-30 mb-10 md:my-30 text-center  font-bold fascinate-inline-regular text-[#ac6f26]'>Top Rated Rooms</motion.h1>
-                
-            <div className='grid grid-cols-1 sm:px-10 px-4 md:grid-cols-3 lg:grid-cols-4 gap-2.5 lg:gap-5 mx-2'>
-                {
+                className='text-5xl castoro mt-30 mb-10 md:my-30 text-center font-bold fascinate-inline-regular text-[#ac6f26]'>
+                Top Rated Rooms
+            </motion.h1>
 
-                    hotels.map(hotel => <HotelCard key={hotel.roomId} hotel={hotel}></HotelCard>)
-                }
-            </div>
+                <div className= 'mx-0 md:mx-10 flex justify-center '>
+                      <HotelSlider hotels={hotels} />
+
+                </div>
+          
 
             <HomeSections></HomeSections>
-
-
-
 
         </div>
     );

@@ -70,8 +70,8 @@
 const Footer = () => {
     return (
         <div className='mt-20'>
-            <footer class="bg-[#ac6f26] eb dark:bg-[#9c6624] text-gray-900  dark:text-white py-10">
-  <div class="md:px-6 px-2 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+            <footer class="bg-[#ac6f26] eb dark:bg-[#9c6624] text-text-white  dark:text-white py-10">
+  <div class="md:px-6  lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
     
     
     <div>
@@ -138,7 +138,7 @@ const Footer = () => {
   </div>
   
   <div class="text-center mt-8 text-sm border-t border-gray-300 dark:border-gray-500 pt-4">
-    © 2025 Larana Hotel. All Rights Reserved.
+    © 2025 AurIs Hotel. All Rights Reserved.
   </div>
 </footer>
 

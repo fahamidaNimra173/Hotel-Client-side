@@ -6,7 +6,8 @@ const FindUs = () => {
   const radissonCoords = [22.3476, 91.8231];
 
   return (
-    <section className="py-16 px-4 pt-30 md:px-8 lg:px-16">
+    <section className="py-16 z-5 overflow-hidden relative px-4 pt-30 md:px-8 lg:px-16">
+       <div className="absolute -top-30 overflow-hidden md:left-30 w-96 h-96 md:bg-[#ffbd59]/30 bg-[#ffbd59]/15 rounded-full blur-3xl pointer-events-none"></div>
       {/* Section Header */}
       <div className="max-w-7xl mx-auto mb-16">
         <div className="text-center">
@@ -32,9 +33,10 @@ const FindUs = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex"
+            className="flex overflow-hidden"
           >
-            <div className="bg-[#28140c] lg:mt-35 castoro rounded-3xl p-8 md:p-12 shadow-2xl w-full flex flex-col">
+            <div className="bg-[#28140c] lg:mt-35 overflow-hidden relative z-5 castoro rounded-3xl p-8 md:p-12 shadow-2xl w-full flex flex-col">
+               <div className="absolute top-0 overflow-hidden left-0 md:left-8 w-96 h-96  bg-[#4e2211] rounded-full blur-3xl -z-5 pointer-events-none"></div>
               <div className="inline-block bg-[#ffbd59] px-4 py-2 rounded-full mb-6 w-fit">
                 <span className="text-[#28140c] font-bold text-sm tracking-wider uppercase">Our Location</span>
               </div>
@@ -93,7 +95,7 @@ const FindUs = () => {
 
           {/* Map Section */}
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="flex"
@@ -134,8 +136,8 @@ const FindUs = () => {
           transition={{ duration: 0.8 }}
           className="relative bg-[#28140c] rounded-3xl overflow-hidden shadow-2xl"
         >
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffbd59]/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#432113] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#532716] rounded-full blur-3xl"></div>
           
           <div className="relative z-10 text-center py-12 px-6">
             <h3 className="text-3xl castoro md:text-4xl font-bold text-[#ffbd59] mb-4">
