@@ -51,7 +51,7 @@ const HomeSections = () => {
   ];
 
   return (
-    <div className=' mt-30 mb-10 '>
+    <div className='mt-20 md:mt-30 mb-10 '>
 
 
 
@@ -62,7 +62,7 @@ const HomeSections = () => {
 
       {/* Banner */}
       <div
-        className="relative z-5  h-[500px] md:h-[600px] bg-cover bg-center flex flex-col w-full justify-end my-30 md:my-50"
+        className="relative z-5  h-[500px] md:h-[600px] bg-cover bg-center flex flex-col w-full justify-end my-20 md:my-30"
         style={{
           backgroundImage:
             "url('https://i.ibb.co.com/Xxm0Bn7s/Blue-and-White-Simple-Hotel-Promotion-Presentation-2.jpg')",
@@ -70,11 +70,11 @@ const HomeSections = () => {
       >
 
         <div className="absolute inset-0 dark:bg-black/40" />
-        <div className="absolute hidden lg:block -bottom-15 overflow-hidden left-23  w-72 -z-5 h-72 bg-[#f6672a] rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute hidden lg:block -bottom-15 overflow-hidden left-96  w-72 -z-5 h-72 bg-[#f6672a] rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute hidden lg:block -bottom-15 overflow-hidden left-63  w-72 -z-5 h-72 bg-[#f6672a] rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute hidden lg:block -bottom-15 overflow-hidden right-96  w-72 -z-5 h-72 bg-[#f6672a] rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute hidden lg:block -bottom-15 overflow-hidden right-63  w-72 -z-5 h-72 bg-[#f6672a] rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute hidden lg:block -bottom-15 overflow-hidden left-23  w-72 -z-5 h-72  bg-gradient-to-b from-[#f6672a]  to-transparent rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute hidden lg:block -bottom-15 overflow-hidden left-96  w-72 -z-5 h-72  bg-gradient-to-b from-[#f6672a]  to-transparent rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute hidden lg:block -bottom-15 overflow-hidden left-63  w-72 -z-5 h-72  bg-gradient-to-b from-[#f6672a]  to-transparent rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute hidden lg:block -bottom-15 overflow-hidden right-96  w-72 -z-5 h-72 bg-gradient-to-b from-[#f6672a]  to-transparent rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute hidden lg:block -bottom-15 overflow-hidden right-63  w-72 -z-5 h-72 bg-gradient-to-b from-[#f6672a]  to-transparent rounded-full blur-3xl pointer-events-none"></div>
         {/* Heading */}
         <motion.h1
           className="castoro shadow-2xl shadow-black text-white text-3xl md:text-5xl font-bold py-6 px-2 md:p-12 absolute mt-45 sm:mt-35 top-0 md:left-15 right-0 z-10"

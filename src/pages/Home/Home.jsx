@@ -106,7 +106,7 @@ const HotelSlider = ({ hotels }) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={prevSlide}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-[#ac6f26] text-white p-4 rounded-full shadow-xl hover:bg-[#8b5a1f] transition-all z-10"
+          className="absolute left-0 md:top-1/2 -bottom-10 -translate-y-1/2 -translate-x-2 bg-[#ac6f26] text-white p-4 rounded-full  md:rounded-br-4xl md:rounded-tl-2xl shadow-xl hover:bg-[#8b5a1f] transition-all z-10"
           aria-label="Previous slide"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,7 +121,7 @@ const HotelSlider = ({ hotels }) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={nextSlide}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-[#ac6f26] text-white p-4 rounded-full shadow-xl hover:bg-[#8b5a1f] transition-all z-10"
+          className="absolute right-0 md:top-1/2 -bottom-10 -translate-y-1/2 translate-x-2 bg-[#ac6f26] text-white p-4 rounded-full md:rounded-bl-4xl md:rounded-tr-2xl shadow-xl hover:bg-[#8b5a1f] transition-all z-10"
           aria-label="Next slide"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -230,7 +230,7 @@ const Home = () => {
                 initial={{ opacity: 0, x: 20, scale: 0 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 1.2 }}
-                className='text-5xl castoro mt-30 mb-10 md:my-30 text-center font-bold fascinate-inline-regular text-[#ac6f26]'>
+                className='lg:text-5xl md:text-4xl text-3xl castoro mt-20 md:mt-30 md:mb-10 md:my-20 text-center font-bold fascinate-inline-regular text-[#8d2e0f]'>
                 Top Rated Rooms
             </motion.h1>
 

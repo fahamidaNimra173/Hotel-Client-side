@@ -48,7 +48,7 @@ const AllRooms = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-5xl md:text-7xl font-bold text-[#28140c] eb mb-6 relative inline-block"
+                        className="text-5xl md:text-7xl font-bold text-[#582a18] eb mb-6 relative inline-block"
                        
                     >
                         Discover Your Perfect Stay
@@ -76,7 +76,7 @@ const AllRooms = () => {
                     >
                         Where comfort meets elegance, and every room tells a story of luxury.
                         <br />
-                        <span className="text-[#ffbd59] font-semibold not-italic">Your journey to extraordinary begins here.</span>
+                        <span className="text-[#f3a32b] font-semibold not-italic">Your journey to extraordinary begins here.</span>
                     </motion.p>
 
                     {/* Decorative Line Bottom */}
@@ -98,8 +98,8 @@ const AllRooms = () => {
                 transition={{ duration: 0.6, delay: 0.9 }}
                 className="max-w-7xl mx-auto mb-12 relative z-10"
             >
-                <div className="flex items-center justify-between flex-wrap gap-4 bg-[#28140c] rounded-2xl p-6 shadow-xl">
-                    <div className="flex items-center gap-4">
+                <div className="flex items-center justify-between flex-wrap gap-4 bg-[#542816] rounded-2xl p-6 shadow-xl">
+                    <div className="flex md:flex-row flex-col items-center gap-4">
                         <span className="text-[#ffbd59] font-bold text-lg" style={{ fontFamily: 'EB Garamond, serif' }}>
                             Refine Your Selection:
                         </span>
@@ -147,8 +147,8 @@ const AllRooms = () => {
             </motion.div>
 
             {/* Decorative Bottom Wave */}
-            <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
-                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-24 opacity-10">
+            <div className="absolute w-full bottom-0 left-0 right-0 pointer-events-none">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-24 opacity-30">
                     <path d="M0 0L60 10C120 20 240 40 360 43.3C480 46.7 600 33.3 720 26.7C840 20 960 20 1080 26.7C1200 33.3 1320 46.7 1380 53.3L1440 60V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z" fill="#ffbd59"/>
                 </svg>
             </div>

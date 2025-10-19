@@ -66,7 +66,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu text-white menu-sm space-y-2 dropdown-content bg-[#ac6f26]  z-1 mt-3 w-52 p-2 shadow castoro font-medium text-[15px]">
+                            className="menu text-white menu-sm py-8 px-4 space-y-2 dropdown-content bg-[#ac6f26]  z-1 mt-3 w-72 p-2 shadow castoro font-medium text-[15px]">
                             <NavLink to='/'>Home</NavLink>
                             <NavLink to='/allrooms'>All Rooms</NavLink>
                             <NavLink to='/mybookings'>My Booking</NavLink>
