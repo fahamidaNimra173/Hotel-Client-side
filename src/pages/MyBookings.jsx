@@ -8,7 +8,7 @@ const MyBookings = () => {
     
     return (
         <div>
-            <h1 className='text-3xl font-bold text-purple-800 text-center bg-purple-50  py-22'>Hi {user.displayName} , here are your all Booked rooms</h1>
+            <h1 className='text-3xl font-bold text-[#7e3a1f] castoro leading-15 text-center pt-30  py-22'>Hi <span className='beau text-5xl'>{user.displayName}</span> , <br /> here are your all Booked rooms</h1>
             <Suspense fallback={<h1> data are coming</h1>}>
                 <BookingsTable myBookingsPromise={myBookingsPromise(user.email)}></BookingsTable>
             </Suspense>
